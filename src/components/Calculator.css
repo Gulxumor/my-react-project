@@ -1,0 +1,8 @@
+.container{
+    border: 3px solid rgb(116, 167, 240);
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    border-radius: 8px;
+}
