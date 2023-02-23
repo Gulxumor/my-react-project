@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import ClassComponent from './components/Age';
+import DollarToSum from './components/App';
+import Calculator from './components/Calculator';
 import './index.css';
-import App from './components/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ClassComponent/>
+    <DollarToSum />
+    <Calculator/>
   </React.StrictMode>
 );
