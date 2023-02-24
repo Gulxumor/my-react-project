@@ -5,21 +5,13 @@ class Calculator extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            select: '',
+            select: "+",
             input1: null,
             input2: null,
             result: null
         }
     }
-    
-        reset = () => {
-            this.setState({
-                select: '',
-                input1: null,
-                input2: null,
-                result: null
-            });
-        }
+
 
     setSelect = (e) => {
         this.setState({ select: e.target.value })
@@ -43,20 +35,32 @@ class Calculator extends React.Component {
         });
     }
 
+    reset = () => {
+        this.setState({
+            select: "",
+            input1: "",
+            input2: "",
+            result: 0
+        });
+    }
+
     render() {
         return (
-            <div className='container'>
-                <input type="number" value={this.state.input1} onChange={this.setInput1} placeholder='Enter number' />
-                <select value={this.state.select} onChange={this.setSelect}>
-                    <option value="+">+</option>
-                    <option value="-">-</option>
-                    <option value="*">*</option>
-                    <option value="/">/</option>
-                </select>
-                <input type="number" value={this.state.input2} onChange={this.setInput2} placeholder='Enter number' />
-                <button onClick={this.calculate}>=</button>
-                <button onClick={this.reset}>Reset</button>
-                <h3>Answer is: {this.state.result}</h3>
+            <div className='div'>
+                    <h2>Calculator</h2>
+                <div className='container'>
+                    <input className='input' type="number" value={this.state.input1} onChange={this.setInput1} placeholder='Enter number' />
+                    <select value={this.state.select} onChange={this.setSelect} defaultValue="+">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select>
+                    <input className='input' type="number" value={this.state.input2} onChange={this.setInput2} placeholder='Enter number' />
+                    <button onClick={this.calculate}>=</button>
+                    <button onClick={this.reset}>Reset</button>
+                    <p>Answer is: {this.state.result}</p>
+                </div>
             </div>
         );
     }

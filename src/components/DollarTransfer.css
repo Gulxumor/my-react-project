@@ -1,0 +1,17 @@
+.val-container {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border: 3px solid rgb(116, 167, 240);
+  border-radius: 8px;
+  margin: 10px 0px;
+}
+
+@media(max-width:800px){
+  .valyuta{
+    width: 80%;
+  }
+}
+
