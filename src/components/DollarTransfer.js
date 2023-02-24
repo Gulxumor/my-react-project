@@ -32,16 +32,13 @@ class DollarTransfer extends React.Component {
       <div className='val-container'>
         <div className='valyuta'>
         <h2>DollarToSum</h2>
-
           <label>Dollarni kiriting:
             <input type="number" value={this.state.US_Dollars} onChange={this.handleInputChange} />
           </label>
-          <p>Bir US dollar O'zbek so'mida 1145000 so'm ga teng </p>
+          <p>Bir US dollar O'zbek so'mida 11 450 so'm ga teng </p>
           <button onClick={this.handleCurrencyTransfer}>Transfer</button>
-
           {/* Bu qism faqat button bosilgandagina korinadi */}
           {this.state.Uzbek_Soums > false ? <p>Siz kiritgan {this.state.US_Dollars} dollar O'zbek summasida {this.state.Uzbek_Soums} so'm ga teng !</p> : ""}
-
         </div>
       </div>
     );
