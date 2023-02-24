@@ -6,9 +6,9 @@ class Calculator extends React.Component {
         super(props);
         this.state = {
             select: "+",
-            input1: null,
-            input2: null,
-            result: null
+            input1: "",
+            input2: "",
+            result: ""
         }
     }
 
