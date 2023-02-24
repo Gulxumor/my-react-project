@@ -1,9 +1,0 @@
-.valyuta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  border: 3px solid rgb(116, 167, 240);
-  border-radius: 8px;
-  margin: 10px 0px;
-}

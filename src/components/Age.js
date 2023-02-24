@@ -5,8 +5,8 @@ class ClassComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            year: null,
-            yosh: null
+            // year: "",
+            yosh: 0
         }
     }
     render() {
@@ -15,18 +15,18 @@ class ClassComponent extends React.Component {
         }
 
         const transfer = () => {
-            console.log(typeof +this.state.year)
-            const yosh = 2023 - this.state.year
-            this.setState({ yosh: yosh })
+            this.setState({ yosh: 2023 - this.state.year })
         }
 
         return (
             <div className="age">
                 <h2>Yoshni chiqarish dasturi</h2>
-                <input type='number' onChange={onYearChange} />
-                <button onClick={transfer}>Transfer</button>
-                <h3>Tug'ilgan yilingiz:  {this.state.year}</h3>
-                <h3>Siz {this.state.yosh} yoshdasiz ! </h3>
+                <div className="year">
+                    <input type='number' onChange={onYearChange} placeholder="Tug'ilgan yilingizni kiriting" />
+                    <button onClick={transfer}>Transfer</button>
+                </div>
+                {/* <h3>Tug'ilgan yilingiz: {this.state.year}</h3> */}
+                <h3>Siz hozir {this.state.yosh} yoshdasiz ! </h3>
             </div>
         )
     }
