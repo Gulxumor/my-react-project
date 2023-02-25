@@ -20,13 +20,13 @@ class ClassComponent extends React.Component {
 
         return (
             <div className="age">
-                <h2>Yoshni chiqarish dasturi</h2>
+                <h2>Age controller</h2>
                 <div className="year">
-                    <input type='number' onChange={onYearChange} placeholder="Tug'ilgan yilingizni kiriting" />
+                    <input type='number' onChange={onYearChange} placeholder="Input your birth year" />
                     <button onClick={transfer}>Transfer</button>
                 </div>
                 {/* <h3>Tug'ilgan yilingiz: {this.state.year}</h3> */}
-                <h3>Siz hozir {this.state.yosh} yoshdasiz ! </h3>
+                <h3>You are {this.state.yosh} years old !</h3>
             </div>
         )
     }
