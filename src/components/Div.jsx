@@ -1,103 +1,131 @@
 import React, { Component } from 'react';
 import "../components/div.css"
 
-class CreateImage extends Component {
-    state = {
-        shape: 'circle',
-        color: 'red',
-        width: '100px',
-        height: '100px'
+
+class ShapeCreator extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            shape: 'Select Shape',
+            color: 'Select Color',
+            width: 'Select Width',
+            height: 'Select Height',
+            shapes: [],
+        };
     }
 
-    handleSelectChange = (event) => {
-        this.setState({ [event.target.name]: event.target.value });
-    }
+    handleChange = (event) => {
+        const { name, value } = event.target;
+        this.setState({ [name]: value });
+    };
 
-    handleCreateButton = () => {
+    createShape = () => {
         const { shape, color, width, height } = this.state;
-        return (
-            <div className='div'>
-                <div className="div-wrapper">
-                    <div>
-                        <select name="shape" onChange={this.handleSelectChange} defaultValue="circle">
-                            <option value="circle">Circle</option>
-                            <option value="triangle">Triangle</option>
-                            <option value="square">Square</option>
-                            <option value="rectangle">Rectangle</option>
-                        </select>
-                        <select name="color" onChange={this.handleSelectChange} defaultValue="red">
-                            <option value="red">Red</option>
-                            <option value="rgb(13, 245, 71)">Green</option>
-                            <option value="rgb(51, 206, 237)">Lightblue</option>
-                            <option value="pink">Pink</option>
-                        </select>
-                        <select name="width" onChange={this.handleSelectChange} defaultValue="100px">
-                            <option value="100px">100px</option>
-                            <option value="200px">200px</option>
-                            <option value="300px">300px</option>
-                            <option value="400px">400px</option>
-                        </select>
-                        <select name="height" onChange={this.handleSelectChange} defaultValue="100px">
-                            <option value="100px">100px</option>
-                            <option value="200px">200px</option>
-                            <option value="300px">300px</option>
-                            <option value="400px">400px</option>
-                        </select>
-                        <button onClick={this.handleCreateButton}>Create</button>
-                    </div>
-                    {this.renderShape(shape, color, width, height)}
-                </div>
-            </div>
-        )
-    }
 
-    renderShape = (shape, color, width, height) => {
-        if (shape === 'circle') {
-            return <div style={{
-                borderRadius: '50%',
-                backgroundColor: color,
+        let newShape;
+        if (shape === 'Triangle') {
+            newShape = {
+                shape: shape,
+                color: color,
                 width: width,
                 height: height,
+                borderLeft: `${width}px solid transparent`,
+                borderRight: `${width}px solid transparent`,
+                borderBottom: `${height}px solid${color}`,
+            };
+        } else if (shape === 'Circle') {
+            newShape = {
+                shape: shape,
+                color: color,
+                width: width,
+                height: height,
+                borderRadius: '50%',
                 margin: '100px auto'
-            }}>
-            </div>
-        } else if (shape === 'triangle') {
-            return <div style={{
-                width: '0',
-                height: '0',
-                borderLeft: ` ${width} solid transparent`,
-                borderRight: `${width} solid transparent`,
-                borderBottom: `${height} solid ${color}`,
+            };
+        } else if (shape === 'Oval') {
+            newShape = {
+                shape: shape,
+                color: color,
+                width: width * 1.5,
+                height: height,
+                borderRadius: '50%',
                 margin: '100px auto'
-            }
-            }>
-            </div >
-        } else if (shape === 'square') {
-            return <div style={{
-                backgroundColor: color,
+            };
+        } else if (shape === "Square") {
+            newShape = {
+                shape: shape,
+                color: color,
                 width: width,
                 height: width,
-                margin: '100px auto'
-            }}>
-            </div>
-        } else if (shape === 'rectangle') {
-            return <div style={{
-                backgroundColor: color,
+            };
+        } else if (shape === "Rectangle") {
+            newShape = {
+                shape: shape,
+                color: color,
                 width: width,
                 height: height,
-                margin: '100px auto'
-            }}>
-            </div>
+            };
         }
-    }
+        this.setState((prevState) => ({
+            shapes: [...prevState.shapes, newShape],
+        }));
+    };
 
     render() {
+        const { shape, color, width, height, shapes } = this.state;
         return (
-            <div>
-            {this.handleCreateButton()}
-        </div>
-    );
-}
+            <div className='render'>
+                <div className="shape-wrapper">
+                    <select value={shape} name="shape" onChange={this.handleChange}>
+                        <option value="Select Shape">Select Shape</option>
+                        <option value="Circle">Circle</option>
+                        <option value="Triangle">Triangle</option>
+                        <option value="Square">Square</option>
+                        <option value="Rectangle">Rectangle</option>
+                        <option value="Oval">Oval</option>
+                    </select>
+                    <select value={color} name="color" onChange={this.handleChange}>
+                        <option value="Select Color">Select Color</option>
+                        <option value="red">Red</option>
+                        <option value="rgb(13, 245, 71)">Green</option>
+                        <option value="rgb(51, 206, 237)">Lightblue</option>
+                        <option value="pink">Pink</option>
+                    </select>
+                    <select value={width} name="width" onChange={this.handleChange}>
+                        <option value="Select Width">Select Width</option>
+                        <option value="100">100</option>
+                        <option value="150">150</option>
+                        <option value="200">200</option>
+                    </select>
+                    <select value={height} name="height" onChange={this.handleChange}>
+                        <option value="Select Height">Select Height</option>
+                        <option value="100">100</option>
+                        <option value="150">150</option>
+                        <option value="200">200</option>
+                    </select>
+                    <button onClick={this.createShape}>Create</button>
+                    {shapes.map((shape) => (
+                        <div key={shape.id} style={{ backgroundColor: shape.color, width: `${shape.width}px`, height: `${shape.height}px`, borderRadius: shape.borderRadius }}>
+                            {shape.shape}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    }
 }
 
-export default CreateImage;
+export default ShapeCreator;
+
+
+
+
+
+
+
+
+
+// Biz ushbu kodni foydalanuvchilarga turli rang va kenglikdagi turli shakllarni yaratishga imkon beruvchi React komponentini yaratish uchun yozamiz.
+// Konstruktor komponentning boshlang'ich holatini, shu jumladan bo'sh shakllar massivini o'rnatadi. handleChange funksiyasi foydalanuvchi kiritgan ma'lumotlarga asoslanib holat qiymatlarini yangilaydi.
+// CreateShape funksiyasi foydalanuvchining tanlovi asosida yangi shakl ob'ektini yaratadi va uni holatdagi shakllar massiviga qo'shadi.
+// render funktsiyasi foydalanuvchi kiritishi uchun shakl elementlarini hamda yaratilgan shakllarni ko'rsatadi.
