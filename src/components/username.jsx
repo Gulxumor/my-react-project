@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React from 'react';
+import "./AddUser.css"
 
 let users = [
     { id: 1, name: "Tomas" },
@@ -8,70 +9,56 @@ let users = [
     { id: 5, name: "Joe" }
 ]
 
-class Table extends Component {
+class AddUser extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            users: users,
-            username: users.name,
-            id: 0,
-            isEditMode: false,
-        };
+            person: users,
+            name: "",
+        }
     }
 
-    handleInput = (event) => {
-        this.setState({
-            username: event.target.value,
-        });
-    };
-
-    addUser = () => {
-        const users = [...this.state.users];
-        if (this.state.isEditMode) {
-            const index = this.state.id;
-            users[index].username = this.state.username;
-            this.setState({ users, isEditMode: false });
-        } else {
-            users.push({
-                username: this.state.username,
-                id: this.state.users.length,
-            });
-            this.setState({ users });
-        }
-    };
-
-    deleteUser = (index) => {
-        const users = [...this.state.users];
-        users.splice(index, 1);
-        this.setState({ users });
-    };
-
-    editUser = (index) => {
-        this.setState({
-            username: this.state.users[index].username,
-            isEditMode: true,
-            id: index,
-        });
-    };
-
     render() {
+
+        let state = this.state
+
+        let deleteUser = (id) => {
+            this.setState({ person: state.person.filter(i => i.id !== id) })
+        }
+
+        let onChange = (e) => {
+            const { value, name } = e.target;
+            this.setState({ [name]: value })
+        }
+
+        let addUser = () => {
+            let newUser = { id: state.person.length + 1, name: state.name }
+            this.setState({ person: [...state.person, newUser], name: "" })
+        }
+
         return (
-            <div>
-                <input type="text" value={this.state.username} onChange={this.handleInput} />
-                <button onClick={this.addUser}>Add User</button>
-                <ol>
-                    {this.state.users.map((user, index) => (
-                        <li key={user.id}>
-                            {user.username}
-                            <button onClick={() => this.editUser(user.id)}>Edit</button>
-                            <button onClick={() => this.deleteUser(user.id)}>Delete</button>
-                        </li>
-                    ))}
-                </ol>
+            <div className='adder'>
+                <a className='link' href="https://github.com/Gulxumor/my-react-project/tree/6-dars/src">Codes of this site</a>
+                <a href="" className="link">Switch to second homework</a>
+                <h1>Add user</h1>
+                <div className='inputs'>
+                    <input type="text" value={state.name} placeholder='Enter your name' onChange={onChange} name="name" />
+                    <button id='btn' onClick={addUser}>Add user</button>
+                </div>
+                {
+                    state.person.map(student => (
+                        <div key={student.id}>
+                            {student.id}-{student.name} - <button onClick={() => deleteUser(student.id)}>Delete</button>
+                        </div>
+                    ))
+                }
             </div>
         );
     }
 }
 
-export default Table;
+
+export default AddUser;
+
+
+
