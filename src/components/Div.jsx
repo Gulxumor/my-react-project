@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "../components/div.css"
 
 
@@ -23,17 +23,7 @@ class ShapeCreator extends React.Component {
         const { shape, color, width, height } = this.state;
 
         let newShape;
-        if (shape === 'Triangle') {
-            newShape = {
-                shape: shape,
-                color: color,
-                width: width,
-                height: height,
-                borderLeft: `${width}px solid transparent`,
-                borderRight: `${width}px solid transparent`,
-                borderBottom: `${height}px solid${color}`,
-            };
-        } else if (shape === 'Circle') {
+         if (shape === 'Circle') {
             newShape = {
                 shape: shape,
                 color: color,
@@ -75,11 +65,13 @@ class ShapeCreator extends React.Component {
         const { shape, color, width, height, shapes } = this.state;
         return (
             <div className='render'>
+                <div className="anchor">
+                <a href="https://github.com/Gulxumor/my-react-project/tree/6-dars/src">the address of the site where the codes of the generator program are located</a>
+                </div>
                 <div className="shape-wrapper">
                     <select value={shape} name="shape" onChange={this.handleChange}>
                         <option value="Select Shape">Select Shape</option>
                         <option value="Circle">Circle</option>
-                        <option value="Triangle">Triangle</option>
                         <option value="Square">Square</option>
                         <option value="Rectangle">Rectangle</option>
                         <option value="Oval">Oval</option>
@@ -111,17 +103,12 @@ class ShapeCreator extends React.Component {
                     ))}
                 </div>
             </div>
+
         );
     }
 }
 
 export default ShapeCreator;
-
-
-
-
-
-
 
 
 
