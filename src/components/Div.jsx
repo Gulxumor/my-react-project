@@ -66,7 +66,7 @@ class ShapeCreator extends React.Component {
         return (
             <div className='render'>
                 <div className="anchor">
-                <a href="https://github.com/Gulxumor/my-react-project/tree/6-dars/src">the address of the site where the codes of the generator program are located</a>
+                    <a className='link' href="https://github.com/Gulxumor/my-react-project/tree/6-dars/src">Codes of this site</a>
                 </div>
                 <div className="shape-wrapper">
                     <select value={shape} name="shape" onChange={this.handleChange}>
@@ -95,7 +95,7 @@ class ShapeCreator extends React.Component {
                         <option value="150">150</option>
                         <option value="200">200</option>
                     </select>
-                    <button onClick={this.createShape}>Create</button>
+                    <button onClick={this.createShape} id="create-btn">Create </button>
                     {shapes.map((shape) => (
                         <div key={shape.id} style={{ backgroundColor: shape.color, width: `${shape.width}px`, height: `${shape.height}px`, borderRadius: shape.borderRadius }}>
                             {shape.shape}
