@@ -38,7 +38,12 @@ class AddUser extends React.Component {
 
         return (
             <div className='adder'>
+                <a className='link' href="https://github.com/Gulxumor/my-react-project/tree/6-dars/src">Codes of this site</a>
                 <h1>Add user</h1>
+                <div className='inputs'>
+                    <input type="text" value={state.name} placeholder='Enter your name' onChange={onChange} name="name" />
+                    <button id='btn' onClick={addUser}>Add user</button>
+                </div>
                 {
                     state.person.map(student => (
                         <div key={student.id}>
@@ -46,10 +51,6 @@ class AddUser extends React.Component {
                         </div>
                     ))
                 }
-                <div className='inputs'>
-                    <input type="text" value={state.name} placeholder='Enter your name' onChange={onChange} name="name" />
-                    <button id='btn' onClick={addUser}>Add user</button>
-                </div>
             </div>
         );
     }

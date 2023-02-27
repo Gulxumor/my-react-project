@@ -1,12 +1,12 @@
 .render {
-    background-color: lightblue;
+    background-color: rgb(141, 204, 251);
     width: 100%;
     height: 83vh;
     display: flex;
     flex-direction:column;
 }
 
-select, button{
+select,#create-btn{
     width: 20%;
 }
 
