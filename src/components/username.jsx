@@ -1,5 +1,5 @@
 import React from 'react';
-import "./AddUser.css"
+import "./username.css"
 
 let users = [
     { id: 1, name: "Tomas" },
@@ -39,7 +39,7 @@ class AddUser extends React.Component {
         return (
             <div className='adder'>
                 <a className='link' href="https://github.com/Gulxumor/my-react-project/tree/6-dars/src">Codes of this site</a>
-                <a href="" className="link">Switch to second homework</a>
+                <a href="https://creating-shape.netlify.app/" className="link">Switch to second homework</a>
                 <h1>Add user</h1>
                 <div className='inputs'>
                     <input type="text" value={state.name} placeholder='Enter your name' onChange={onChange} name="name" />
