@@ -1,0 +1,40 @@
+.adder {
+    width: 100 %;
+    display: flex;
+    flex - direction: column;
+    margin: 30px auto;
+    /* background-color: rgb(141, 204, 251); */
+}
+
+button {
+    width: 15 %;
+    border: 2px solid rgb(70, 231, 41);
+    color: rgb(255, 247, 247);
+    background - color: rgb(167, 254, 152);
+    border - radius: 3px;
+    margin: 5px 0;
+}
+
+#btn {
+    border: 2px solid rgb(255, 251, 0);
+    background - color: rgb(237, 249, 66);
+    width: 8 %;
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+button:hover {
+    border: 2px solid rgb(231, 41, 41);
+    background - color: rgb(233, 18, 18);
+}
+
+.inputs {
+    margin: 10px 0;
+}
+
+h1,
+.link {
+    text - align: center;
+}
