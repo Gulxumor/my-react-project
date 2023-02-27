@@ -7,8 +7,7 @@ import './index.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode >
-    {/* <CreateImage/> */}
-    {/* <AddUser /> */}
-    < ShapeCreator/>
+-    <AddUser />
+    {/* < ShapeCreator/> */}
   </React.StrictMode>
 );
