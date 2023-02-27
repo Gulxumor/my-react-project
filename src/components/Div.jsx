@@ -66,7 +66,8 @@ class ShapeCreator extends React.Component {
         return (
             <div className='render'>
                 <div className="anchor">
-                    <a className='link' href="https://github.com/Gulxumor/my-react-project/tree/6-dars/src">Codes of this site</a>
+                    <a className='link' href="https://github.com/Gulxumor/my-react-project/tree/6-dars/src">Codes of this site</a><br/>
+                    <a href="https://adding-username.netlify.app/">Switch to first homework</a>
                 </div>
                 <div className="shape-wrapper">
                     <select value={shape} name="shape" onChange={this.handleChange}>
