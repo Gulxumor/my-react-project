@@ -68,7 +68,7 @@ class Table extends React.Component {
         };
         return (
             <div className='table'>
-                <h1 style={{ color: 'cornflowerblue' }}>Webbrain Academy</h1>
+                <a href='https://github.com/Gulxumor/my-react-project/tree/7-dars' style={{ color: 'cornflowerblue' }}>Webbrain Academy</a>
                 <hr />
                 <div>
                     <input id='search' onChange={onFilter} type='text' placeholder='Search...' />
