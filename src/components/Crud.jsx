@@ -77,6 +77,7 @@ class Table extends React.Component {
                         <option value='id'>ID</option>
                         <option value='name'>Name</option>
                         <option value='status'>Status</option>
+                        <option value='age'>Age</option>
                     </select>
                 </div>
                 <hr />
