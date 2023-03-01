@@ -68,7 +68,7 @@ class Table extends React.Component {
         };
         return (
             <div className='table'>
-                <h1 style={{ color: 'cornflowerblue' }}>Webbrain Academy</h1>
+                <a href='https://github.com/Gulxumor/my-react-project/tree/7-dars' style={{ color: 'cornflowerblue' }}>Webbrain Academy</a>
                 <hr />
                 <div>
                     <input id='search' onChange={onFilter} type='text' placeholder='Search...' />
@@ -77,6 +77,7 @@ class Table extends React.Component {
                         <option value='id'>ID</option>
                         <option value='name'>Name</option>
                         <option value='status'>Status</option>
+                        <option value='age'>Age</option>
                     </select>
                 </div>
                 <hr />

@@ -10,6 +10,11 @@ body {
     background-color: rgb(201, 201, 201);
 }
 
+a{
+    font-size: 40px;
+    text-decoration: none;
+}
+
 input {
     border-radius: 8px;
     margin: 5px 5px;
@@ -40,6 +45,7 @@ select {
     border: 10px;
     color: cornflowerblue;
     border-radius: 2em;
+    cursor: pointer;
 }
 
 button {
@@ -48,6 +54,7 @@ button {
     color: white;
     background-color: cornflowerblue;
     padding: 5px 15px;
+    cursor: pointer;
 }
 
 button:active {

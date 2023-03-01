@@ -1,3 +1,76 @@
-.main{
-    margin: auto 0
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+
+
+/* import React from 'react';
+import './Countries.css';
+
+import {
+    countries
 }
+
+from './Countries-data'
+
+
+class States extends React.Component {
+    constructor(props) {
+        super(props) this.state= {
+            arr: [],
+                inp: null,
+                countries: false
+        }
+    }
+
+    render() {
+        let inputChange=(e)=> {
+            this.setState({
+                inp: e.target.value
+            })
+    }
+
+    let inc=()=> {
+        let res=countries.filter(v=> v.name.common.toLowerCase()===this.state.inp.toLowerCase()) this.setState({
+            ...this.state, arr: res,
+        })
+}
+
+return (<div className="nav" > <div className="inp" > <input onChange= {
+        inputChange
+    }
+
+    placeholder="Enter any country name" ></input> <button onClick= {
+        inc
+    }
+
+    >Search</button> </div> {
+        this.state.arr.map(v=> (<div className="main" > <div className="img" > <img src= {
+                    v.flags.png
+                }
+
+                alt="flag" ></img> <h4>State: {
+                    v.name.common
+                }
+
+                </h4> </div> <h4>Population: {
+                    v.population
+                }
+
+                </h4> <h4>Continents: {
+                    v.continents[0]
+                }
+
+                </h4> <h4>Capital: {
+                    v.capital[0]
+                }
+
+                </h4> </div>))
+    }
+
+    </div>)
+}
+}
+export default States */
