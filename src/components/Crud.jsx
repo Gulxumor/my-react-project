@@ -82,10 +82,9 @@ class Table extends React.Component {
                 </div>
                 <hr />
 
-                <input className="input"
+                <input className="input"onChange={onChange}
                     value={this.state.name}
                     name='name'
-                    onChange={onChange}
                     type='text'
                     placeholder='Add new username...'
                 />
@@ -102,7 +101,6 @@ class Table extends React.Component {
                     placeholder="Add age..."
                 />
                 <button className='add-btn' onClick={onAdd}>Add</button>
-
                 <table width={'100%'}>
                     <thead>
                         <tr className='title'>
