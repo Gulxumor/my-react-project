@@ -9,12 +9,10 @@ class FindState extends Component {
             countryName: countries.name,
             country: "",
             flag: '',
-            subregion: "",
+            // subregion: "",
             capital: '',
             population: '',
-            currency: '',
-            language: '',
-            foundCountry: false,
+            // foundCountry: false,
         }
     }
 
@@ -31,10 +29,8 @@ class FindState extends Component {
                 country: foundCountry.name.common,
                 flag: foundCountry.flags.png,
                 capital: foundCountry.capital,
-                subregion: foundCountry.subregion,
+                // subregion: foundCountry.subregion,
                 population: foundCountry.population,
-                currency: foundCountry.currencies.name,
-                language: foundCountry.nativeName,
                 foundCountry: true
             });
         } else {
@@ -42,21 +38,17 @@ class FindState extends Component {
                 country: "",
                 flag: '',
                 capital: '',
-                subregion: "",
+                // subregion: "",
                 population: '',
-                currency: '',
-                language: '',
                 foundCountry: false
             });
         }
     }
 
     render() {
-        const { countryName, country, flag, capital, subregion, population, currency, language, foundCountry } = this.state;
+        const { countryName, country, flag, capital, population, foundCountry } = this.state;
         return (
             <div className="FindState">
-                <image src="https: //storage.kun.uz/source/uploads/2020/05-08/ftyl4.jpg"></image>
-                <div className='wrapper'>
                     <form>
                         <input
                             type="text"
@@ -71,15 +63,12 @@ class FindState extends Component {
                             <img src={flag} alt="flag" />
                             <p><b>Country: </b>{country}</p>
                             <p><b>Capital: </b>{capital}</p>
-                            <p><b>Location: </b>{subregion}</p>
-                            <p><b>Population: </b>{population}</p>
-                            <p><b>Currency: </b>{currency}</p>
-                            <p><b>Language: </b>{language}</p>
+                            {/* <p><b>Location: </b>{subregion}</p> */}
+                        <p><b>Population: </b>{population}</p>
                         </div>
                     ) : (
-                        <pre></pre>
-                    )}
-                </div>
+                    <p>No country found</p>
+                )}
             </div>
         );
     }
