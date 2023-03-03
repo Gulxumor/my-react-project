@@ -1,0 +1,58 @@
+body {
+    background-image: url("./images/background-image.jpg");
+    /* background-color: #cccc; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrapper {
+    margin: 100px 0px;
+    border: 5px solid rgb(79, 80, 79);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    /* backdrop-filter: blur(5px); */
+}
+
+input {
+    height: 40px;
+    margin: 20px;
+    border: none;
+    outline: none;
+    background: scroll;
+    border-bottom: solid;
+    padding: 12px 20px;
+    transition: width 0.4s ease-in-out;
+    color: white
+}
+
+
+input::placeholder {
+    font-size: 18px;
+    color: rgb(179, 176, 176)
+}
+
+input:focus {
+    width: 300px;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    background-color: blue;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+pre {
+    margin: 0 auto 20px auto;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -55,27 +55,31 @@ class FindState extends Component {
         const { countryName, country, flag, capital, subregion, population, currency, language, foundCountry } = this.state;
         return (
             <div className="FindState">
-                <h1>Find A Country</h1>
-                <input
-                    type="text"
-                    placeholder="Enter Country Name"
-                    value={countryName}
-                    onChange={this.InputChange}
-                />
-                <button onClick={this.searchCountry}>Search</button>
-                {foundCountry ? (
-                    <div className="find-country">
-                        <img src={flag} alt="flag" />
-                        <p><b>Country: </b>{country}</p>
-                        <p><b>Capital: </b>{capital}</p>
-                        <p><b>Location: </b>{subregion}</p>
-                        <p><b>Population: </b>{population}</p>
-                        <p><b>Currency: </b>{currency}</p>
-                        <p><b>Language: </b>{language}</p>
-                    </div>
-                ) : (
-                    <div>No Country Found!</div>
-                )}
+                <image src="https: //storage.kun.uz/source/uploads/2020/05-08/ftyl4.jpg"></image>
+                <div className='wrapper'>
+                    <form>
+                        <input
+                            type="text"
+                            placeholder="Enter Country Name"
+                            value={countryName}
+                            onChange={this.InputChange}
+                        />
+                        <button onClick={this.searchCountry}>Search</button>
+                    </form>
+                    {foundCountry ? (
+                        <div className="find-country">
+                            <img src={flag} alt="flag" />
+                            <p><b>Country: </b>{country}</p>
+                            <p><b>Capital: </b>{capital}</p>
+                            <p><b>Location: </b>{subregion}</p>
+                            <p><b>Population: </b>{population}</p>
+                            <p><b>Currency: </b>{currency}</p>
+                            <p><b>Language: </b>{language}</p>
+                        </div>
+                    ) : (
+                        <pre></pre>
+                    )}
+                </div>
             </div>
         );
     }
