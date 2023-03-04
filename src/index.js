@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import States from './components/Countries';
-// import FindState from './components/homework';
+import Choose from './Choose';
+import Header from './components/Header.jsx';
+import Main from './components/Main.jsx';
+import Navbar from './components/Navbar.jsx';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode >
-    {/* <FindState /> */}
-    <States/>
+    <Navbar />
+    <Header />
+    <Main/>
+    <Choose />
   </React.StrictMode>
 );
