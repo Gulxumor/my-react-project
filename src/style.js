@@ -19,10 +19,9 @@ export const common = css`
     padding-top: ${(props) => props.pt ? props.pt + "px" : "0px"};
     padding-bottom: ${(props) => props.pb ? props.pb + "px" : "0px"};
 
-    font-size: ${(props) => props.fsize ? props.fsize + "px" : "16px"}
     font-family: ${(props) => props.family ? props.family : "sans-serif"};
+    font-size: ${(props) => props.fsize ? props.fsize + "px" : "16px"};
 
-    border: ${(props) => props.border ? props.border : "none"};
     border: ${(props) => props.border ? props.border : "none"};
     border-radius: ${(props) => props.br ? props.br + "px" : "0px"};
    
@@ -39,14 +38,7 @@ export const common = css`
 `;
 
 
-const Container = styled.span`
-${common};
-
-
-`;
 
 
 
-
-
-export {Button,  Container}
+export { Button, }
