@@ -22,7 +22,6 @@ const Content = styled.div`
 
 Content.RichText = styled.h1`
   max-width:419px;
-  
 
 `
 
