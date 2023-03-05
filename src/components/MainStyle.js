@@ -1,18 +1,24 @@
 import styled from 'styled-components';
+import {ReactComponent as ellipse} from "../components/assets/icons/ellipse.svg"
 
 const Container = styled.div`
-max-width:1500px;
+  max-width:1500px;
   width:100%;
-  margin: auto;
-  border: 1px solid black;
+  display: flex;
+  gap: 200px;
+  align-items: center;
+  margin: 150px auto;
 `;
 
-const Title = styled.h2`
-margin-top: 270px;
+const Price = styled.pre``
+
+const Title = styled.h3`
+font-size: 40px;
+font-weight: 600;
 `
 
 const Text = styled.p`
-margin: 27px 0 44px 0;
+  margin: 27px 0 44px 0;
 `
 
 const Button = styled.button`
@@ -27,7 +33,52 @@ const Button = styled.button`
     :active{
         transform: scale(0.95);
     }
-
 `
 
-export { Container, Button, Text, Title };
+const Box = styled.div`
+  width: 296px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  :hover{
+    .imgs{
+      position: relative;
+      z-index: 1;
+      bottom: 50px;
+    }
+    .ll{
+      position: relative;
+      z-index: 1;
+      bottom: 20px;
+    }
+    .ls{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+`
+
+const Img = styled.img`
+  width: 189px;
+  height: 261px;
+`
+const Boxes = styled.div`
+  display: none;
+  width: 296px;
+  height: 307px;
+  background: #35736E1A;
+  border-radius: 15px;
+`
+
+const Ellipse = styled(ellipse)`
+/* display: none; */
+visibility: hidden;
+:hover{
+display: block;
+}
+`
+
+export { Container, Ellipse,Price, Button, Text, Title, Box, Img, Boxes };

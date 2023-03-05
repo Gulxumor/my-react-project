@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { ReactComponent as logo } from "../components/icons/furni.svg"
-import { ReactComponent as user } from "../components/icons/user.svg"
-import { ReactComponent as cart } from "../components/icons/cart.svg"
+import { ReactComponent as logo } from "../components/assets/icons/furni.svg"
+import { ReactComponent as user } from "../components/assets/icons/user.svg"
+import { ReactComponent as cart } from "../components/assets/icons/cart.svg"
 
 const Furni = styled(logo)``
 const User = styled(user)``
@@ -46,6 +46,7 @@ const Li = styled.li`
 display:flex;
 align-items:flex-end;
 color:var(--white);
+opacity: 0.5;
 font-style: normal;
 font-weight: 500;
 font-size: 16px;
@@ -53,7 +54,8 @@ line-height: 19px;
 border-bottom:7px solid transparent;
 
 :hover{
-    border-bottom:7px solid var(--yellow)
+    border-bottom: 7px solid var(--yellow);
+    opacity: 100;
 }
 `
 
