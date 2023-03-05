@@ -1,6 +1,6 @@
 import React from 'react';
 import { Btn, Button, Container, Content, Img, Wrapper } from './HeaderStyle';
-import CouchImage from "../components/images/couch.png"
+import CouchImage from "../components/assets/images/couch.png"
 
 class Header extends React.Component {
     constructor(props) {
