@@ -4,6 +4,7 @@ import {ReactComponent as ellipse} from "../components/assets/icons/ellipse.svg"
 const Container = styled.div`
   max-width:1500px;
   width:100%;
+  /* background:#EFF2F1; */
   display: flex;
   gap: 200px;
   align-items: center;
@@ -26,6 +27,7 @@ const Button = styled.button`
     height:${(props) => props.h ? props.h + "px" : "50px"};
     background: ${(props) => props.bg ? props.bg : "black"};
     color: ${(props) => props.color ? props.color : "white"};
+    margin-top: ${(props) => props.mt ? props.mt + "px" : "0px"};
     border: ${(props) => props.border ? props.border : "none"};
     padding: ${(props) => props.padding ? props.padding + "px" : "0px"};
     border-radius: 30px;
@@ -69,7 +71,7 @@ const Boxes = styled.div`
   display: none;
   width: 296px;
   height: 307px;
-  background: #35736E1A;
+  background: var(--lime);
   border-radius: 15px;
 `
 

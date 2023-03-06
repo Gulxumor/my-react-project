@@ -4,19 +4,31 @@ import { ReactComponent as returnImg } from '../components/assets/icons/return.s
 import { ReactComponent as shopBag } from '../components/assets/icons/shop-bag.svg';
 import { ReactComponent as support } from '../components/assets/icons/support.svg';
 
-const Container = styled.div`
-  max-width:1500px;
-  width:100%;
-  margin: 0 auto 71px auto;
-  border: 1px solid black;
-  display: flex;
-`;
 const Truck = styled(truck)``
 const Return = styled(returnImg)``
 const Shop = styled(shopBag)``
 const Support = styled(support)``
+const Image = styled.img``
 
-const Right = styled.div``
+
+const Container = styled.div`
+/* background:#EFF2F1; */
+  max-width:1500px;
+  width:100%;
+  margin:  auto;
+  display: flex;
+  margin-bottom: ${(props) => props.mb ? props.mb + "px" : "71px"};
+
+`;
+
+const Right = styled.img`
+  max-width: 542px;
+  max-height: 709.05px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+
+`
 
 const Left = styled.div`
   display: flex;
@@ -24,15 +36,8 @@ const Left = styled.div`
   flex-wrap: wrap;
 
 `
-const Image = styled.img`
-  max-width: 514.82px;
-  max-height: 629.1px;
-  border-radius: 10px;
-`
-
 const Wrapper = styled.div`
   margin-left: ${(props) => props.ml ? props.ml + "px" : "0px"};
-border:2px solid red;
 `
 
 const Title = styled.h3`
@@ -43,6 +48,7 @@ const Title = styled.h3`
   font-size: ${({ fs }) => fs ? fs + "px" : "14px"};
   line-height: ${({ lh }) => lh ? lh + "px" : "22px"};
   margin-bottom: ${(props) => props.mb ? props.mb + "px" : "9px"};
+  margin-left: ${(props) => props.ml ? props.ml + "px" : "0px"};
   font-style: normal;
   font-weight: 600;
 `
@@ -51,18 +57,19 @@ const Text = styled.h4`
   width:${({ w }) => w ? w + "px" : "247px"};
   height:${({ h }) => h ? h + "px" : "78px"};
   line-height:${({ lh }) => lh ? lh + "px" : "22px"};
-  margin-bottom: ${(props) => props.mb ? props.mb + "px" : "0px"};
+  margin: ${(props) => props.margin ? props.margin + "px" : "0px"};
+  margin-bottom: ${(props) => props.mb ? props.mb + "px" : "26px"};
   margin-left: ${(props) => props.ml ? props.ml + "px" : "0px"};
+
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0em;
   text-align: left;
 `
 
-const Top = styled.div``
 const Bottom = styled.div`
-display: flex;
-flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 `
 
-export { Container, Text, Title, Left, Truck, Shop, Support, Return, Bottom, Wrapper, Top, Right, Image };
+export { Container, Text, Title, Left, Truck, Shop, Support, Return, Bottom, Wrapper, Right, Image };
