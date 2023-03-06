@@ -1,33 +1,35 @@
 import styled from 'styled-components';
 import { ReactComponent as Doiracha} from '../components/assets/icons/doira.svg';
 
+export const Right = styled.div``
+
 export const Container = styled.div`
 max-height: 5010px;
 max-width: 1500px;
 width: 100%;
-margin:0 auto;
+margin:0 auto 180px auto;
 display: flex;
-border:2px solid red;
 position: relative;
 `;
 
 export const Wrapper = styled.div`
-border: 1px solid blue;
 display: flex;
 flex: 1;
 flex-direction: ${({ fd }) => fd ? fd : "row"};
+margin-left: ${({ ml }) => ml ? "33px" : "0px"};
 `
 export const Doira = styled(Doiracha)`
     width: 8px;
     height: 8px;
+    margin-right: 13px;
 `
 export const Div = styled.div`
 display: flex;
 align-items: center;
+justify-content: start;
 `;
  
- 
-export const Right = styled.div``
+
 
 export const Img = styled.img`
     width:${(props) => props.w ? props.w + "px" : "100px"};
@@ -57,11 +59,12 @@ export const Title = styled.h3`
 `
 
 export const Text = styled.h3`
-width: 444px;
-height: 105px;
+width: ${({ w }) => w ? "444px" : "194px"};
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
 line-height: 24px;
 color: var(--gray);
+margin-top: ${({ mt }) => mt ? "31px" : "0px"};
+margin-bottom: ${({ mb }) => mb ? mb : "0px"};
 `

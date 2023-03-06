@@ -12,7 +12,7 @@ class Copyright extends React.Component {
             <Container>
                 <Link w="500" fs="13">Copyright 2022 degraft87@gmail.com. All Rights Reserved.</Link>
                 <Wrapper>
-                    <Link w="200">Terms & Conditions</Link>
+                    <Link>Terms & Conditions</Link>
                     <Link>Privacy Policy</Link>
                 </Wrapper>
             </Container>

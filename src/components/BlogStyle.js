@@ -14,7 +14,7 @@ justify-content: space-between;
 `
 
 export const Title = styled.h3`
-width: 197px;
+width: 200px;
 height: 41px;
 font-weight: 600;
 font-size: 34px;

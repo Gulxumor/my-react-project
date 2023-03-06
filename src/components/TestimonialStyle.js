@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ReactComponent as girl } from '../components/assets/icons/girl.svg';
 
 export const Container = styled.div`
-background:#EFF2F1;
+/* background:#EFF2F1; */
 max-width: 1550px;
 width: 100%;
 margin: 0 auto;
@@ -15,7 +15,7 @@ export const Div = styled.div`
   max-height: 41px;
   width: 100%;
   height: 100vh;
-  margin: 0 auto;
+  margin: 95px auto 20px auto;
 `;
 export const Title = styled.h3`
     width:${({ w }) => w ? w + "px" : "130px"};
