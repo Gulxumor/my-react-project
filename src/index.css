@@ -12,6 +12,8 @@
         --white: #fff;
         --black: #2f2f2f;
         --gray: #6A6A6A;
+        --lime: #35736E1A;
+        --color: #35736E4D;
         --font-family: 'Inter', sans-serif;
     
     }
@@ -33,7 +35,7 @@
     }
     
     p {
-        max-width: 228px;
+        width: 228px;
         max-height: 108px;
         font-style: normal;
         font-weight: 400;
