@@ -63,6 +63,8 @@ height: 47px;
 display: flex;
 align-items: center;
 justify-content: center;
+border: none;
+outline: none;
 `
 
 export { Section, Telegram, Button, Wrapper, Text, Input, Top, Bottom, Icon, Image };

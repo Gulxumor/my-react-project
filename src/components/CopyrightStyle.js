@@ -11,8 +11,8 @@ margin-bottom: 20px;
 `;
 
 export const Link = styled.p`
-    width:${(props) => props.w ? props.w + "px" : "0px"};
-    width: 120px;
+    width:${(props) => props.w ? props.w + "px" : "200px"};
+    /* width: 120px; */
     font-size: ${(props) => props.fsize ? props.fsize + "px" : "14px"};
     
 
