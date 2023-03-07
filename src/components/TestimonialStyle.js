@@ -10,7 +10,7 @@ margin: 0 auto;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: var(--green);
+    background: var(--green);
 }
 
 .slick-next{
@@ -20,11 +20,6 @@ margin: 0 auto;
 .slick-prev{
     margin-left: -100px;
 }
-
-.slider{
-    margin: 0 auto;
-}
-
 `
 
 export const Wrapper = styled.div`
