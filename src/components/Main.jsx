@@ -1,47 +1,60 @@
 import React from 'react';
-import { Container, Text, Title, Button, Box, Img, Boxes, Price, Ellipse } from './MainStyle';
-import img1 from '../components/assets/images/chair1.png'
-import img2 from '../components/assets/images/chair2.png'
-import img3 from '../components/assets/images/chair3.png'
-class Main extends React.Component {
+import Slider from "react-slick";
+import { A, Category, Container, Img, Inner, Rating, Star } from './MainStyle';
+class MySlider extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            images: []
+        };
     }
-
+    componentDidMount() {
+        fetch('https://fakestoreapi.com/products')
+            .then(response => response.json())
+            .then(json => {
+                const images = json.slice(0, 10).map(item => ({
+                    id: item.id,
+                    category: item.category,
+                    image: item.image,
+                    title: item.title,
+                    price: item.price,
+                    rating: item.rating.rate,
+                }));
+                this.setState({ images });
+            });
+    }
     render() {
+            const settings = {
+                dots: true,
+                infinite: true,
+                speed: 500,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                fade: true,
+                cssEase: 'linear'
+            };
         return (
             <Container>
-                <div>
-                    <Title>Crafted with excellent material.</Title>
-                    <Text>Donec mattis porta eros, aliquet finibus risus interdum at. Nulla vivethe as it was for us to know what was to be done.</Text> 
-                    <Button>Explore</Button>
-                </div>
-                <Box>
-                    <Img className='imgs' src={img1} />
-                    <Price className='ll'>Nordic Chair</Price>
-                    <Price className='ll'>$50.00</Price>
-                    <Boxes className='ls'/>
-                    <Ellipse/>
-                </Box>
-                <Box>
-                    <Img className='imgs' src={img2} />
-                    <Price className='ll'>Kruzo Aero Chair</Price>
-                    <Price className='ll'>$78.00</Price>
-                    <Boxes className='ls' />
-                    <Ellipse />
-                </Box>
-                <Box>
-                    <Img className='imgs' src={img3} />
-                    <Price className='ll'>Ergonomic Chair</Price>
-                    <Price className='ll'>$43.00</Price>
-                    <Boxes className='ls' />
-                    <Ellipse />
-                </Box>
+                <Slider {...settings}>
+                    {this.state.images.map(product => (
+                        <div key={product.id}>
+                            <A href='https://github.com/Gulxumor/my-react-project/tree/10-dars'>Github code</A>
+                            <Category>{product.category}</Category>
+                            <Img src={product.image} alt={product.title} />
+                            <Category>{product.title}</Category>
+                            <Category>${product.price}</Category>
+                            <Inner>
+                                <Star />
+                                <Rating> {product.rating}</Rating>
+                            </Inner>
+                        </div>
+                    ))}
+                </Slider>
             </Container>
         );
     }
 }
 
-
-export default Main;
+export default MySlider

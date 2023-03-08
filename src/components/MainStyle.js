@@ -1,86 +1,68 @@
 import styled from 'styled-components';
-import {ReactComponent as ellipse} from "../components/assets/icons/ellipse.svg"
+import "../style"
+import { ReactComponent as star } from '../components/assets/icons/star.svg';
+export const Star = styled(star)``
+export const Rating = styled.p``
 
-const Container = styled.div`
-  max-width:1500px;
+export const Container = styled.div`
+  max-width: 1550px;
   width:100%;
-  /* background:#EFF2F1; */
-  display: flex;
-  gap: 200px;
-  align-items: center;
-  margin: 150px auto;
-`;
-
-const Price = styled.pre``
-
-const Title = styled.h3`
-font-size: 40px;
-font-weight: 600;
-`
-
-const Text = styled.p`
-  margin: 27px 0 44px 0;
-`
-
-const Button = styled.button`
-    width:${(props) => props.w ? props.w + "px" : "122px"};
-    height:${(props) => props.h ? props.h + "px" : "50px"};
-    background: ${(props) => props.bg ? props.bg : "black"};
-    color: ${(props) => props.color ? props.color : "white"};
-    margin-top: ${(props) => props.mt ? props.mt + "px" : "0px"};
-    border: ${(props) => props.border ? props.border : "none"};
-    padding: ${(props) => props.padding ? props.padding + "px" : "0px"};
-    border-radius: 30px;
-    cursor:pointer;
-    :active{
-        transform: scale(0.95);
-    }
-`
-
-const Box = styled.div`
-  width: 296px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  :hover{
-    .imgs{
-      position: relative;
-      z-index: 1;
-      bottom: 50px;
-    }
-    .ll{
-      position: relative;
-      z-index: 1;
-      bottom: 20px;
-    }
-    .ls{
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-    }
+  height: 100vh;
+  margin: auto;
+  
+  .slick-arrow{
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    cursor: pointer;
+    margin: 0 300px;
   }
-`
-
-const Img = styled.img`
-  width: 189px;
-  height: 261px;
-`
-const Boxes = styled.div`
-  display: none;
-  width: 296px;
-  height: 307px;
-  background: var(--lime);
-  border-radius: 15px;
-`
-
-const Ellipse = styled(ellipse)`
-/* display: none; */
-visibility: hidden;
-:hover{
-display: block;
+  .slick-next:before, .slick-prev:before {
+    color: blue !important;
+  }
+@media (max-width:800px){
+  .slick-arrow{
+    display: none !important;
+  }
+  
 }
-`
+@media (max-width:1000px){
+  .slick-arrow{
+    margin: 0 150px;
+  }
+}
 
-export { Container, Ellipse,Price, Button, Text, Title, Box, Img, Boxes };
+`;
+export const Img = styled.img`
+width: 300px;
+height: 300px;
+margin:80px auto;
+`
+export const Category = styled.p`
+text-transform: capitalize;
+margin: 10px auto;
+text-align: center;
+`
+export const Inner = styled.div`
+margin: 0 600px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 6px;
+
+@media (max-width:800px) {
+ margin: 0;
+}
+
+@media (max-width:1000px){
+  margin: 0;
+}
+
+`
+export const A = styled.a`
+max-width: 1500px;
+width: 100%;
+color: pink;
+text-decoration: none;
+margin: 10px 130px;
+`
