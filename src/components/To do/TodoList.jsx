@@ -7,13 +7,12 @@ function TodoList() {
 
   const addTodo = (todo) => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
-      return;
+      return alert("Please write something");
     }
 
-    const newTodos = [todo, ...todos];
+    const newTodos = [...todos, todo];
 
     setTodos(newTodos);
-    console.log(...todos);
   };
 
   const updateTodo = (todoId, newValue) => {
