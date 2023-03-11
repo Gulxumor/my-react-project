@@ -3,3 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.slick-arrow:active {
+    transform: scale(1) !important;
+}
+
+.slick-next:before,
+.slick-prev:before {
+    opacity: 100 !important;
+    color: red !important;
+    font-size: 50px !important;
+}
+
+.slick-prev:before {
+    margin-left: -30px !important;
+}
