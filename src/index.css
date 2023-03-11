@@ -90,7 +90,6 @@ h1 {
 .todo-container {
     display: flex;
     flex-direction: row;
-    /* position: relative; */
 }
 
 .todo-row {
@@ -137,5 +136,4 @@ h1 {
 
 .delete-icon {
     margin-right: 5px;
-   
 }
