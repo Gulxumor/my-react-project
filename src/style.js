@@ -37,8 +37,4 @@ export const common = css`
   
 `;
 
-
-
-
-
 export { Button, }
