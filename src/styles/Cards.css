@@ -2,7 +2,6 @@ section {
     max-width: 1500px;
     width: 100%;
     margin: 0 auto;
-    /* margin-top: 2%; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 0px;
@@ -19,7 +18,6 @@ section {
 .image_box img {
     width: 150px;
     height: 150px;
-    /* object-fit: cover; */
     margin: 0 10px 5px 30px;
 }
 
