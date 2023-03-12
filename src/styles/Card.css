@@ -33,6 +33,12 @@ article {
     padding: 5px 10px;
     font-weight: bold;
     margin-right: 5px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .cart_box div:nth-child(3) button {
@@ -51,6 +57,9 @@ article {
     background-color: red;
 }
 
+.cart_box div:nth-child(3) button:active {
+    transform: scale(0.95);
+}
 .cart_box div:nth-child(3) span {
     background-color: lightgreen;
     padding: 5px 10px;
@@ -65,7 +74,8 @@ article {
 
 .total span:nth-child(1) {
     font-size: 2rem;
-    color: skyblue;
+    color: lightgreen;
     font-weight: bold;
     letter-spacing: 2px;
+    font-family: cursive;
 }
