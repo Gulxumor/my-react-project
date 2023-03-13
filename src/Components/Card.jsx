@@ -25,22 +25,22 @@ const Cart = ({ cart, setCart, handleChange }) => {
       {cart?.map((item) => (
         <div className="cart_box" key={item.id}>
           <div className="cart_img">
-            <img src={item.img} alt="logo"/>
+            <img src={item.img} alt="logo" className="image" />
             <p>{item.title}</p>
           </div>
-          <div>
+          <div className="buttons">
             <button onClick={() => handleChange(item, +1)}> + </button>
             <button>{item.amount}</button>
             <button onClick={() => handleChange(item, -1)}> - </button>
           </div>
           <div>
-            <span>{item.price}</span>
-            <button onClick={() => handleRemove(item.id)}>Remove</button>
+            <span className="price">{item.price}</span>
+            <button className="remove" onClick={() => handleRemove(item.id)}>Remove</button>
           </div>
         </div>
       ))}
-      <div className="total">
-        <span>Total Price - ${price}</span>
+      <div>
+        <span className="total">Total Price - ${price}</span>
       </div>
     </article>
   );

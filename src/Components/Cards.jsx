@@ -2,15 +2,15 @@ import React from "react";
 import "../styles/Cards.css";
 
 const Cards = ({ item, handleClick }) => {
-  const { title, caterogy, price, img, rating } = item;
+  const { title, category, price, img, rating } = item;
   return (
     <div className="cards">
+      <p className="category">{category}</p>
       <div className="image_box">
         <img src={img} alt="logo" />
       </div>
       <div className="details">
         <p>{title}</p>
-        <p>{caterogy}</p>
         <p>Price: ${price}</p>
         <p>
           Rating: {rating.rate}
@@ -20,7 +20,15 @@ const Cards = ({ item, handleClick }) => {
             alt="rating"
           />
         </p>
-        <button onClick={() => handleClick(item)}>Add to Card</button>
+        <hr />
+        <div className="wrapper">
+          <img
+            className="heart"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEU-QRte8eypdibDBn-xhslTfNx3MRFIWimw&usqp=CAU"
+            alt="heart-icon"
+          />
+          <button onClick={() => handleClick(item)}>Add to Card</button>
+        </div>
       </div>
     </div>
   );
