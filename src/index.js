@@ -1,19 +1,11 @@
 import React from 'react';
-// import { BrowserRouter } from 'react-router-dom';
-import ReactDOM from 'react-dom/client';
-import App from './Components/App';
+import ReactDOM from 'react-dom';
 import './index.css';
+import YouTube from './YouTube';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode >
-    {/* <BrowserRouter> */}
-      <App />
-    {/* </BrowserRouter> */}
-  </React.StrictMode>
+ReactDOM.render(
+  <React.StrictMode>
+    <YouTube />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
-
-
-
-
