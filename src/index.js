@@ -4,8 +4,6 @@ import './index.css';
 import YouTube from './YouTube';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <YouTube />
-  </React.StrictMode>,
+    <YouTube />,
   document.getElementById('root')
 );
