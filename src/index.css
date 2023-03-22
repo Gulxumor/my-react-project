@@ -14,7 +14,7 @@
 }
 
 .slick-next:before,
-.slick-prev:before {
+.slick-prev:before { 
   opacity: 100 !important;
   color: red !important;
   font-size: 50px !important;
