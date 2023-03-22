@@ -1,8 +1,10 @@
 import React from "react";
-import Home from "../Pages/Home";
 
 const Root = () => {
-  return <Home />;
+  return (
+    <div>
+    </div>
+  );
 };
 
 export default Root;
