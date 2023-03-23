@@ -8,7 +8,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* font-family: */
 :root {
   --font-family: 'Outfit', sans-serif;
   --white: #fff;
@@ -27,12 +26,10 @@ h1,
     font-size: 90px;
     line-height: 133px;
   color: #FFFFFF;
-  border: 0.5px solid #FFFFFF;
 }
 
 .nav-link {
   font-family: var(--font-family);
-    font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 25px;
@@ -40,10 +37,20 @@ h1,
   color: var(--white)
 }
 
+ .nav-link-menu {
+   color: var(--pink);
+ }
 .nav-link:hover {
   opacity: .9;
 }
 
+.nav-items-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
 .nav-right {
   justify-content: flex-end;
   width: 100%;
@@ -67,11 +74,50 @@ h3,
   font-weight: 700;
   font-size: 50px;
   line-height: 74px;
-  /* identical to box height */
-
-
   color: #FFFFFF;
-}
+  }
+  
+  .ant-drawer-header {
+    display: none !important;
+  }
+  
+  .ant-modal-title,
+  .ant-modal-footer,
+  .ant-modal-close {
+    display: none !important;
+  }
+  
+  .ant-modal-content {
+    padding: 0 !important;
+  }
+  
+  :where(.css-dev-only-do-not-override-mxhywb).ant-modal .ant-modal-content {
+    background-color: #333;
+    border: none;
+    outline: none;
+  }
+  
+  
+  :where(.css-dev-only-do-not-override-ph9edi).ant-model {
+    top: 400px !important;
+  }
+  
+  @media (max-width:600px) {
+    :where(.css-dev-only-do-not-override-ph9edi).ant-model {
+      width: 80% !important;
+    }
+  }
+  
+  @media (max-width:428px) {
+    .ant-drawer-content-wrapper {
+      width: 100% !important;
+    }
+
+                 .nav-link {
+                   font-size: 16px;
+                 }
+
+ }
 /* slider */
 /* .slick-arrow:active {
   transform: scale(1) !important;
