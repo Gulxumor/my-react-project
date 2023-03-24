@@ -1,4 +1,3 @@
-import { type } from '@testing-library/user-event/dist/type';
 import styled from 'styled-components';
 
 const getType = ({type}) => {
@@ -8,7 +7,8 @@ const getType = ({type}) => {
             border: "1px solid var(--white)",
             background: "transparent"
 
-        }
+        }; default: return {}
+
     }
 }
 

@@ -3,6 +3,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
+/* slider */
+/* .slick-arrow:active {
+  transform: scale(1) !important;
+}
+
+.slick-next:before,
+.slick-prev:before {
+  opacity: 100 !important;
+  color: red !important;
+  font-size: 50px !important;
+}
+
+.slick-prev:before{
+  margin-left: -30px!important;
+}
+*/
+
 *{
   margin: 0;
   padding: 0;
@@ -26,6 +43,7 @@ h1,
     font-size: 90px;
     line-height: 133px;
   color: #FFFFFF;
+  width: 100%;
 }
 
 .nav-link {
@@ -66,7 +84,6 @@ p,
   color: var(--white);
   opacity: 0.9;
 }
-
 h3,
 .subtitle {
   font-family: var(--font-family);
@@ -86,51 +103,67 @@ h3,
   .ant-modal-close {
     display: none !important;
   }
-  
   .ant-modal-content {
     padding: 0 !important;
   }
-  
   :where(.css-dev-only-do-not-override-mxhywb).ant-modal .ant-modal-content {
     background-color: #333;
     border: none;
     outline: none;
   }
+:where(.css-dev-only-do-not-override-ph9edi).ant-model {
+  top: 400px !important;
+}
   
-  
+@media(max-width:1300px) {
+  h1 {
+    font-size: 80px;
+    line-height: 128px;
+  }
+}
+
+@media(max-width:1200px) {
+  h1 {
+    font-size: 70px;
+    line-height: 124px;
+  }
+}
+
+@media(max-width:1050px) {
+  h1 {
+    font-size: 65px;
+    line-height: 120px;
+  }
+}
+
+@media(max-width:767px) {
+  h1 {
+    font-size: 60px;
+    line-height: 110px;
+  }
+}
+
+@media(max-width:600px) {
+  h1 {
+    font-size: 50px;
+    line-height: 100px;
+  }
+
   :where(.css-dev-only-do-not-override-ph9edi).ant-model {
-    top: 400px !important;
+    width: 80% !important;
   }
-  
-  @media (max-width:600px) {
-    :where(.css-dev-only-do-not-override-ph9edi).ant-model {
-      width: 80% !important;
-    }
-  }
-  
-  @media (max-width:428px) {
-    .ant-drawer-content-wrapper {
+}
+@media (max-width:428px) {
+
+  .ant-drawer-content-wrapper {
       width: 100% !important;
+  }
+    .nav-link {
+    font-size: 1rem;
     }
-
-                 .nav-link {
-                   font-size: 16px;
-                 }
-
- }
-/* slider */
-/* .slick-arrow:active {
-  transform: scale(1) !important;
-}
-
-.slick-next:before,
-.slick-prev:before {
-  opacity: 100 !important;
-  color: red !important;
-  font-size: 50px !important;
-}
-
-.slick-prev:before{
-  margin-left: -30px!important;
-}
-*/
+    
+    h1 {
+      font-size: 40px;
+      line-height: 90px;
+    }
+    }
