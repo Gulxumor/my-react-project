@@ -4,7 +4,7 @@ const getType = ({type}) => {
     switch (type) {
         case "primary": return {}
         case "secondary": return {
-            border: "1px solid var(--white)",
+            border: "1px solid #fff",
             background: "transparent"
 
         }; default: return {}
