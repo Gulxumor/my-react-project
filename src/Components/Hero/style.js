@@ -13,7 +13,6 @@ display: flex;
 align-items: center;
 gap: 24px;
 margin-top: 37px;
-
 `
 const Rating = styled(Rate)`
 margin-top: 23px;
@@ -21,12 +20,10 @@ margin-top: 23px;
 const Container = styled.div`
 width: 100%;
 `;
-
 const Wrapper = styled.div`
 max-width: 1440px;
 width: 100%;
 margin: auto;
-/* padding:0px 86px; */
 
 @media(max-width:1300px){
 padding:0px 86px;
@@ -44,7 +41,4 @@ padding:0px 56px;
 padding:0px 46px;
 }
 `
-
-
-
 export { Container, Wrapper, Rating,Title, Btns, Subtitle, Description };

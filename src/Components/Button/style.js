@@ -11,7 +11,6 @@ const getType = ({type}) => {
 
     }
 }
-
 const Container = styled.button`
 display: flex;
 align-items: center;
@@ -32,7 +31,7 @@ color: var(--white);
 ${getType}
 transition: transform .4s ease;
 :active{
-    transform: scale(.95);
+    transform: scale(.98);
 }
 
 `;

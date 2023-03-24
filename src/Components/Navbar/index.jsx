@@ -1,6 +1,7 @@
-import { Drawer } from "antd";
 import React, { useEffect, useState } from "react";
+import { Drawer } from "antd";
 import { HiMenu } from "react-icons/hi";
+import SearchModal from "../SearchModal";
 import { AiOutlineClose } from "react-icons/ai";
 import {
   Column,
@@ -11,19 +12,18 @@ import {
   Search,
   Wrapper,
 } from "../style";
-import SearchModal from "../SearchModal";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [placement, setPlacement] = useState("left");
+  const [placement] = useState("left");
   const showDrawer = () => {
     setOpen(true);
   };
   const onClose = () => {
     setOpen(false);
   };
-  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) setScrolled(true);
