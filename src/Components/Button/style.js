@@ -27,11 +27,11 @@ font-weight: 600;
 font-size: 18px;
 line-height: 23px;
 letter-spacing: 0.04em;
-color: var(--white);
+color: #fff;
 ${getType}
 transition: transform .4s ease;
 :active{
-    transform: scale(.98);
+    transform: scale(.95);
 }
 
 `;

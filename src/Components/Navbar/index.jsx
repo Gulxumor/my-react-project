@@ -36,7 +36,7 @@ const Navbar = () => {
     };
   }, []);
 
-  // Search Bar
+  // SearchBar
   const showModal = () => {
     setIsModalOpen(true);
   };
