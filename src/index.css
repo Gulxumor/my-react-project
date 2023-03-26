@@ -20,6 +20,18 @@
 }
 */
 
+/*  Media
+@media(max-width:1300px) {}
+
+@media(max-width:1200px) {}
+
+@media(max-width:1050px) {}
+
+@media(max-width:767px) {}
+
+@media(max-width:428px) {}
+*/
+
 *{
   margin: 0;
   padding: 0;
@@ -73,7 +85,6 @@ h1,
   justify-content: flex-end;
   width: 100%;
 }
-
 p,
 .description {
   font-family: 'Outfit';
@@ -93,61 +104,76 @@ h3,
   line-height: 74px;
   color: #FFFFFF;
   }
-  
   .ant-drawer-header {
     display: none !important;
   }
-  
-  .ant-modal-title,
-  .ant-modal-footer,
-  .ant-modal-close {
-    display: none !important;
-  }
-  .ant-modal-content {
-    padding: 0 !important;
-  }
-  :where(.css-dev-only-do-not-override-mxhywb).ant-modal .ant-modal-content {
-    background-color: #333;
-    border: none;
-    outline: none;
-  }
-:where(.css-dev-only-do-not-override-ph9edi).ant-model {
-  top: 400px !important;
-}
-  
+
 @media(max-width:1300px) {
   h1 {
     font-size: 80px;
     line-height: 128px;
   }
+  p {
+    font-size: 18px;
+    line-height: 150%;
+  }
+  h3{
+      font-size: 45px;
+      line-height: 74px;
+    }
 }
-
 @media(max-width:1200px) {
   h1 {
     font-size: 70px;
     line-height: 124px;
-  }
+  } 
+     p {
+       font-size: 17px;
+       line-height: 148%;
+     }
+  
+     h3 {
+       font-size: 40px;
+       line-height: 65px;
+     }
 }
-
 @media(max-width:1050px) {
   h1 {
     font-size: 65px;
     line-height: 120px;
   }
 }
-
 @media(max-width:767px) {
   h1 {
     font-size: 60px;
     line-height: 110px;
   }
+    p {
+       font-size: 16px;
+       line-height: 145%;
+     }
+  
+     h3 {
+       font-size: 35px;
+       line-height: 60px;
+     }
 }
-
 @media(max-width:600px) {
   h1 {
     font-size: 50px;
     line-height: 100px;
   }
+
+        p {
+          font-size: 14px;
+          line-height: 140%;
+        }
+    
+        h3 {
+          font-size: 35px;
+          line-height: 55px;
+        }
+
 
   :where(.css-dev-only-do-not-override-ph9edi).ant-model {
     width: 80% !important;
@@ -166,4 +192,14 @@ h3,
       font-size: 40px;
       line-height: 90px;
     }
-    }
+        p {
+          font-size: 12px;
+          line-height: 130%;
+        }
+    
+        h3 {
+          font-size: 25px;
+          line-height: 50px;
+        }
+
+}

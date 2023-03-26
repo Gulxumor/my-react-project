@@ -11,7 +11,7 @@ import {
   Notification,
   Search,
   Wrapper,
-} from "../style";
+} from "./style";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button";
 import { VscPlay } from "react-icons/vsc";
+import MovieModal from "../MovieModal";
 import {
   Btns,
   Container,
@@ -12,6 +13,8 @@ import {
 } from "./style";
 
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <Container>
       <Wrapper>
@@ -24,9 +27,12 @@ const Hero = () => {
         </Description>
         <Rating allowHalf defaultValue={2.5} />
         <Btns>
-          <Button icon={<VscPlay />}>Watch Now</Button>
+          <Button onClick={() => setIsModalOpen(true)} icon={<VscPlay />}>
+            Watch Now
+          </Button>
           <Button type={"secondary"}>Trailer</Button>
         </Btns>
+        <MovieModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       </Wrapper>
     </Container>
   );

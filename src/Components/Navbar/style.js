@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { ReactComponent as logo } from '../assets/icons/logo.svg';
-import { ReactComponent as search } from '../assets/icons/search.svg';
-import { ReactComponent as notification } from '../assets/icons/notification.svg';
+import { ReactComponent as logo } from '../../assets/icons/logo.svg';
+import { ReactComponent as search } from '../../assets/icons/search.svg';
+import { ReactComponent as notification } from '../../assets/icons/notification.svg';
 const Logo = styled(logo)`
 @media (max-width:767px) {
  width:100px;
