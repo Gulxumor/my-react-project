@@ -16,7 +16,7 @@ const Container = styled(Modal)`
     outline: none;
   }
 :where(.css-dev-only-do-not-override-ph9edi).ant-modal {
-  top: 400px !important;
+  top: 50% !important;
 }
 
 @media(max-width: 880px) {
