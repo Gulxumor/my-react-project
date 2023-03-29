@@ -1,7 +1,10 @@
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Root from './root';
+import Root from './root/Root';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -9,5 +12,6 @@ root.render(
     <div>
       <Root/>
     </div>
+    <Root />
   </React.StrictMode>
 );
