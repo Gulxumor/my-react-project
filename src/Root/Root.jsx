@@ -1,8 +1,9 @@
-import React from "react";
-import Home from "../Pages/Home";
+import React from 'react'
 
 const Root = () => {
-  return <Home />;
-};
+  return (
+    <div>Root</div>
+  )
+}
 
-export default Root;
+export default Root
