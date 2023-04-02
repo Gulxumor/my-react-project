@@ -1,6 +1,8 @@
 import React from 'react'
 import "./style.css";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, useNavigate } from "react-router-dom";
+import { navLink } from "../../mock";
+const navigate = useNavigate();
 
 const Navbar = () => {
   return (
@@ -9,41 +11,23 @@ const Navbar = () => {
         <h1>Logo</h1>
         <div>
           <ul>
-            <li>
-              <NavLink
-                to={"/"}
-                style={({ isActive }) => ({ color: isActive ? "red" : "#fff" })}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                style={({ isActive }) => ({ color: isActive ? "red" : "#fff" })}
-                to={"/about"}
-              >
-                About
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                style={({ isActive }) => ({ color: isActive ? "red" : "#fff" })}
-                to={"/contact"}
-              >
-                Contact
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                style={({ isActive }) => ({ color: isActive ? "red" : "#fff" })}
-                to={"/main"}
-              >
-                Main
-              </NavLink>
-            </li>
+            {navLink.map((link) => (
+              <li key={link.id}>
+                <NavLink
+                  to={link.to}
+                  style={({ isActive }) => ({
+                    color: isActive ? "red" : "#fff",
+                  })}
+                >
+                  {link.title}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
-        <button>Login</button>
+        <NavLink to={"/login"}>
+          <button>Login</button>
+        </NavLink>
       </nav>
       <Outlet />
     </div>
