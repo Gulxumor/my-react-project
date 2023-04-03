@@ -37,7 +37,15 @@ const Navbar = () => {
             )}
           </ul>
         </nav>
-        <button onClick={() => navigate("/login")}>Login</button>
+        <>
+          <button onClick={() => navigate("/login")}>Login</button>
+          <button
+            onClick={() => localStorage.removeItem("token")}
+            className="logOut"
+          >
+            Log Out
+          </button>
+        </>
       </header>
       <Outlet />
     </>

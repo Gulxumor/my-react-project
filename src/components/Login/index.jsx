@@ -35,12 +35,10 @@ const Login = () => {
           <Title>Name:</Title>
           <Input placeholder="Enter your name" ref={nameRef} type="text" />
         </div>
-
         <div>
           <Title>Email:</Title>
           <Input placeholder="Enter your email" ref={emailRef} type="email" />
         </div>
-
         <div>
           <Title>Password:</Title>
           <Input
@@ -50,7 +48,7 @@ const Login = () => {
           />
         </div>
         <div>
-          <Button type="submit" onClick={onSave}>
+          <Button type="submit" onClick={onSave} id="button">
             {loading ? "Loading..." : "Login"}
           </Button>
         </div>

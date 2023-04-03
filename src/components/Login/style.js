@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 export const Container = styled.div`
 width: 100%;
 margin: 80px  500px;
@@ -14,8 +13,13 @@ margin: auto;
 position: absolute;
 border: 2px solid black;
 border-radius: 18px;
-`
 
+#button{
+    width: 400px;
+    display: block;
+}
+
+`
 export const Text = styled.h1`
 padding-top: 20px;
 font-family: cursive;
@@ -47,4 +51,3 @@ export const Button = styled.button`
 margin:20px 0;
 width: 100%;
 `
-
