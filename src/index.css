@@ -8,6 +8,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.main{
+ text-align: center;
+}
 /* slider */
  /* .slick-arrow:active {
   transform: scale(1) !important;

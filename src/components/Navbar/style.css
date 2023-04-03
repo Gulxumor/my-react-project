@@ -1,4 +1,4 @@
-nav{
+header {
     max-width: 1550px;
     display: flex;
     align-items: center;
@@ -29,9 +29,23 @@ button{
     background-color: cornflowerblue;
     color: #fff;
     font-size: 20px;
-    /* border-radius: 10px; */
+    border: none;
+    outline: none;
 }
 
 button:active{
-    transform: scale(.95);
+    transform: scale(.99);
+}
+.nav-logo,
+button {
+    cursor: pointer;
+}
+.nav-logo{
+   border-radius: 50%;
+   width: 40px;
+   height: 40px;
+}
+.logOut {
+    width: -moz-fit-content;
+    width: fit-content;
 }

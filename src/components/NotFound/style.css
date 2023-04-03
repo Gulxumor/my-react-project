@@ -1,14 +1,9 @@
 .not-found {
     width: 100vw;
     height: 100vh;
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 100px; */
     background-image: url("../../assets/images/404-notFound.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    /* background-color: rebeccapurple; */
 }
 
 #notFound-btn{
