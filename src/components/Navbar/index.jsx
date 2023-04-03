@@ -2,35 +2,45 @@ import React from 'react'
 import "./style.css";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
 import { navLink } from "../../mock";
-const navigate = useNavigate();
+import logo from "../../assets/images/images.png";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
-    <div>
-      <nav>
-        <h1>Logo</h1>
-        <div>
-          <ul>
-            {navLink.map((link) => (
-              <li key={link.id}>
-                <NavLink
-                  to={link.to}
-                  style={({ isActive }) => ({
-                    color: isActive ? "red" : "#fff",
-                  })}
-                >
-                  {link.title}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <NavLink to={"/login"}>
-          <button>Login</button>
+    <>
+      <header>
+        <NavLink
+          to={
+            "https://github.com/Gulxumor/my-react-project/tree/18-dars/router-dom"
+          }
+          target="_blank"
+        >
+          <img src={logo} alt="github-logo" className="nav-logo" />
         </NavLink>
-      </nav>
+
+        <nav>
+          <ul>
+            {navLink?.map(
+              ({ id, to, title, hidden }) =>
+                !hidden && (
+                  <li key={id}>
+                    <NavLink
+                      to={to}
+                      style={({ isActive }) => ({
+                        color: isActive ? "red" : "#fff",
+                      })}
+                    >
+                      {title}
+                    </NavLink>
+                  </li>
+                )
+            )}
+          </ul>
+        </nav>
+        <button onClick={() => navigate("/login")}>Login</button>
+      </header>
       <Outlet />
-    </div>
+    </>
   );
 };
 

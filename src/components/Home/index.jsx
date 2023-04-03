@@ -1,9 +1,12 @@
 import React from 'react'
+import "../../index.css";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div className="main">
+      <h1>Welcome to the Home section</h1>
+    </div>
+  );
+};
 
 export default Home
