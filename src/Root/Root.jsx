@@ -1,8 +1,8 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { navLink } from "../mock";
 import NotFound from "../components/NotFound";
+import { navLink } from "../utils/Navbar";
 
 const Root = () => {
   const token = JSON.parse(localStorage.getItem("token"));
