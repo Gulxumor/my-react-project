@@ -5,11 +5,14 @@ header {
     justify-content: space-between;
     width: 100%;
     height: 80px;
-    background: #333;
-    color: #fff;
-    padding: 0 100px;
+    background: var(--white);
+    padding: 0 131px;
     font-size: 30px;
     margin: 0 auto;
+    box-shadow:
+            rgba(0, 0, 0, 0.2) 0px 5px 5px -3px,
+            rgba(0, 0, 0, 0.14) 0px 8px 10px 1px,
+            rgba(0, 0, 0, 0.12) 0px 3px 14px 2px;
 }
 ul{
     display: flex;
@@ -48,4 +51,12 @@ button {
 .logOut {
     width: -moz-fit-content;
     width: fit-content;
+}
+.search {
+    /* width: 50px;
+    height: 50px; */
+    /* color: black; */
+    /* border: 2px solid black; */
+    /* background-color: blueviolet; */
+
 }
