@@ -5,12 +5,15 @@ import { Outlet, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/brand/rymo-logo-black.png";
 import { navLink } from "../../utils/Navbar";
 import { ImSearch } from "react-icons/im";
-import { Button, Drawer, Dropdown } from "antd";
+import { Button, Drawer, Dropdown, Modal } from "antd";
 import { CgHeart } from "react-icons/cg";
+import { MdShoppingBasket } from "react-icons/md";
+import { Input } from "../SignUp/style";
 
 const Navbar = () => {
   const navigate = useNavigate();
-
+  const [modalOpen, setModalOpen] = useState(false);
+  const [confirmLoading, setConfirmLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
     setOpen(true);
@@ -18,7 +21,6 @@ const Navbar = () => {
   const onClose = () => {
     setOpen(false);
   };
-
   const items = [
     {
       key: "1",
@@ -39,19 +41,25 @@ const Navbar = () => {
       ),
     },
   ];
+  const showModal = () => {
+    setModalOpen(true);
+  };
+  const handleOk = () => {
+    setConfirmLoading(true);
+    setTimeout(() => {
+      setModalOpen(false);
+      setConfirmLoading(false);
+    }, 2000);
+  };
+  const handleCancel = () => {
+    setModalOpen(false);
+  };
 
   return (
     <>
       <header>
-        <NavLink // logo
-          to={
-            "https://github.com/Gulxumor/my-react-project/tree/18-dars/router-dom"
-          }
-          target="_blank"
-        >
-          <img src={logo} alt="github-logo" />
-        </NavLink>
-
+        <img onClick={() => navigate("/")} src={logo} />
+        {/* nav links start here */}
         <nav>
           <ul>
             {navLink?.map(
@@ -71,18 +79,44 @@ const Navbar = () => {
             )}
           </ul>
         </nav>
+        {/* nav links end here */}
         <div>
-          {<ImSearch onClick={() => navigate("/login")} />}
-          <button onClick={showDrawer}>Products</button>
+          <ImSearch onClick={showModal} />
+          <Modal
+            title="Search products..."
+            open={modalOpen}
+            onOk={handleOk}
+            confirmLoading={confirmLoading}
+            onCancel={handleCancel}
+          >
+            <Input type="text" placeholder="Search..." />
+          </Modal>
+
+          <MdShoppingBasket onClick={showDrawer} />
+
           <Drawer //drawer
-            title="Basic Drawer"
+            title="Products"
             placement="right"
             onClose={onClose}
             open={open}
           >
-            <p>Some contents...</p>
+            <hr />
+            <p>No Products Yet</p>
+            <p> Cart Totals</p>
+            <hr />
+            <div className="footer">
+              <hr />
+              <div>
+                <p>Total</p>
+                <p>$0.00</p>
+              </div>
+              <button>Proceed to checkout</button>
+              <button>Continue shopping</button>
+            </div>
           </Drawer>
+
           <CgHeart onClick={() => navigate("/wishlist")} />
+
           <Dropdown
             menu={{
               items,
@@ -96,7 +130,7 @@ const Navbar = () => {
       </header>
       <Outlet />
     </>
-  );
+  )
 };
 
 export default Navbar;
