@@ -18,7 +18,6 @@ border-radius: 18px;
     width: 400px;
     display: block;
 }
-
 `
 export const Text = styled.h1`
 padding-top: 20px;

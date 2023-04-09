@@ -20,7 +20,7 @@ const Root = () => {
                 <Route
                   key={id}
                   path={to}
-                  element={token ? element : <Navigate to={"/login"} />}
+                  element={token ? element : <Navigate to={"/sign-up"} />}
                 />
               )
           )}
