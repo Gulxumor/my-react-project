@@ -2,18 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,600;1,800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--font-family);
-}
-
-.main{
-  margin-top: 100px;
- text-align: center;
-}
 /* slider */
  /* .slick-arrow:active {
   transform: scale(1) !important;
@@ -39,6 +27,17 @@
 @media(max-width:428px) {}
 */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.main {
+  margin-top: 100px;
+  text-align: center;
+}
 :root {
   --white: #fff;
   --orange: rgb(251, 119, 75);
