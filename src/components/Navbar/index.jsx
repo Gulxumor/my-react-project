@@ -15,12 +15,8 @@ const Navbar = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [open, setOpen] = useState(false);
-  const showDrawer = () => {
-    setOpen(true);
-  };
-  const onClose = () => {
-    setOpen(false);
-  };
+ 
+
   const items = [
     {
       key: "1",
@@ -37,13 +33,11 @@ const Navbar = () => {
     {
       key: "4",
       label: (
-        <div onClick={() => localStorage.removeItem("token")}>Sign Up</div>
+        <div onClick={() => localStorage.removeItem("token")}>Log Out</div>
       ),
     },
   ];
-  const showModal = () => {
-    setModalOpen(true);
-  };
+
   const handleOk = () => {
     setConfirmLoading(true);
     setTimeout(() => {
@@ -51,14 +45,11 @@ const Navbar = () => {
       setConfirmLoading(false);
     }, 2000);
   };
-  const handleCancel = () => {
-    setModalOpen(false);
-  };
 
   return (
     <>
       <header>
-        <img onClick={() => navigate("/")} src={logo} />
+        <img onClick={() => navigate("/")} src={logo} alt="logo" />
         {/* nav links start here */}
         <nav>
           <ul>
@@ -81,23 +72,23 @@ const Navbar = () => {
         </nav>
         {/* nav links end here */}
         <div>
-          <ImSearch onClick={showModal} />
+          <ImSearch onClick={setModalOpen(true)} />
           <Modal
             title="Search products..."
             open={modalOpen}
             onOk={handleOk}
             confirmLoading={confirmLoading}
-            onCancel={handleCancel}
+            onCancel={setModalOpen(false)}
           >
             <Input type="text" placeholder="Search..." />
           </Modal>
 
-          <MdShoppingBasket onClick={showDrawer} />
+          <MdShoppingBasket onClick={setOpen(true)} />
 
           <Drawer //drawer
             title="Products"
             placement="right"
-            onClose={onClose}
+            onClose={setOpen(false)}
             open={open}
           >
             <hr />
@@ -130,7 +121,7 @@ const Navbar = () => {
       </header>
       <Outlet />
     </>
-  )
+  );
 };
 
 export default Navbar;
