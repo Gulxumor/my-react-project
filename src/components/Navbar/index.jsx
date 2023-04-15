@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-import "./style.css";
-import { Outlet, NavLink, useNavigate } from "react-router-dom";
-// import logo from "../../assets/images/images.png";
-import logo from "../../assets/images/brand/rymo-logo-black.png";
-import { navLink } from "../../utils/Navbar";
-import { ImSearch } from "react-icons/im";
-import { Button, Drawer, Dropdown, Modal } from "antd";
-import { CgHeart } from "react-icons/cg";
-import { MdShoppingBasket } from "react-icons/md";
-import { Input } from "../SignUp/style";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  decrement,
+  decrementByAmount,
+  increment,
+  incrementByAmount,
+} from "../../store/CounterSlice";
 
 const Navbar = () => {
+
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
@@ -121,9 +119,21 @@ const Navbar = () => {
       </header>
       <Outlet />
     </>
+
+  const { counter } = useSelector((state) => state.counterReducer);
+  const dispatch = useDispatch();
+  return (
+    <div>
+      <h2>Navbar, {counter}</h2>
+      <button onClick={() => dispatch(increment())}>+</button>
+      <button onClick={() => dispatch(decrement())}>-</button>
+      <button onClick={() => dispatch(incrementByAmount(5))}>+5</button>
+      <button onClick={() => dispatch(decrementByAmount({ minus: 2 }))}>
+        -2
+      </button>
+    </div>
+
   );
 };
 
 export default Navbar;
-
-// <NavLink to={"https://github.com/Gulxumor/my-react-project/tree/18-dars/router-dom"}target="_blank"><img src={logo} alt="github-logo" className="nav-logo" /></NavLink>
