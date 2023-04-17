@@ -1,12 +1,12 @@
-import React from 'react'
-import "./style.css";
+import React from "react";
+import Products from "./Products";
 
-const Shop = () => {
+export const Shop = () => {
   return (
-    <div className="main">
-      <h1>Welcome to the Shop section</h1>
-    </div>
+    <>
+      <Products />
+    </>
   );
 };
 
-export default Shop
+export default Shop;

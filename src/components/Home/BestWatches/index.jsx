@@ -1,25 +1,22 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Card } from "../Generics/Card";
+import { watchesProducts } from "../../../utils/bestWatches";
+import { Card } from "../../Generics/Card";
 import { Container, Description, Products, Title, Wrapper } from "./style";
 
-export const Wishlist = () => {
-  const store = useSelector((state) => state);
+export const BestWatches = () => {
   const navigate = useNavigate();
-  const products = store?.data?.wishlist;
-
   return (
     <Container>
       <Wrapper>
-        <Title>Our Wishlist</Title>
+        <Title>Best Watches</Title>
         <Description>
           Here you can check out our new products with fair price on rymo.
         </Description>
         <Products>
-          {products?.map((product) => (
+          {watchesProducts?.map((product) => (
             <Card
-              onClick={() => navigate(`/shop/:${product.id}`)}
+              onClick={() => navigate(`/shop/:${product?.id}`)}
               key={product?.id}
               product={product}
             />
@@ -30,4 +27,4 @@ export const Wishlist = () => {
   );
 };
 
-export default Wishlist;
+export default BestWatches;

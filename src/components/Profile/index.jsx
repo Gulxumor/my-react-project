@@ -1,11 +1,26 @@
 import React from "react";
-import "./style.css";
+import { Container, Content, ImageWrapper, Title, Wrapper } from "./style";
+import noImage from "../../assets/images/shop/dark-blue.png";
 
-const Profile = () => {
+export const Profile = () => {
+  const user = JSON.parse(localStorage.getItem("user-info"));
+
   return (
-    <div className="main">
-      <h1>Welcome to the Profile section</h1>
-    </div>
+    <Container>
+      <Wrapper>
+        {/* <Edit onClick={() => navigate('/profile-edit')}>Edit Profile</Edit> */}
+        <ImageWrapper>
+          <ImageWrapper.UserImage src={noImage} />
+        </ImageWrapper>
+        <Content>
+          <Title>{user?.fullname}</Title>
+          <Content.Specialist>Software Engineer</Content.Specialist>
+          <Content.Specialist>{user?.email}</Content.Specialist>
+          <Content.Password type="password" value={user?.password} />
+          {/* <Description>Uzbekistan</Description> */}
+        </Content>
+      </Wrapper>
+    </Container>
   );
 };
 

@@ -1,34 +1,39 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import NotFound from "../components/NotFound";
-import { navLink } from "../utils/Navbar";
+// import NotFound from "../components/404";
+import { Navbar } from "../components/Navbar";
+import { navbar } from "../utils/navbar";
 
-const Root = () => {
-  const token = JSON.parse(localStorage.getItem("token"));
+export const Root = () => {
   return (
     <div>
       <Routes>
         <Route element={<Navbar />}>
-          {navLink?.map(
-            ({ id, to, element, isPrivate }) =>
-              !isPrivate && <Route key={id} path={to} element={element} />
+          <Route path="/" element={<Navigate to="/home" />} />
+          {navbar?.map((navlink) =>
+            navlink?.isPrivate ? (
+              <Route
+                key={navlink?.id}
+                path={navlink?.path}
+                element={
+                  localStorage.getItem("tokenRymo") ? (
+                    navlink?.element
+                  ) : (
+                    <Navigate to="/sign-in" />
+                  )
+                }
+              />
+            ) : (
+              <Route
+                key={navlink?.id}
+                path={navlink?.path}
+                element={navlink?.element}
+              />
+            )
           )}
-          {navLink?.map(
-            ({ id, to, element, isPrivate }) =>
-              isPrivate && (
-                <Route
-                  key={id}
-                  path={to}
-                  element={token ? element : <Navigate to={"/sign-up"} />}
-                />
-              )
-          )}
+          {/* <Route path="*" element={<NotFound />} /> */}
         </Route>
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
 };
-
-export default Root;

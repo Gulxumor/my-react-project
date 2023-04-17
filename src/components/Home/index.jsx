@@ -1,12 +1,20 @@
-import React from 'react'
-import "../../index.css";
+import React from "react";
+import BestWatches from "./BestWatches";
+import Brands from "./Brands";
+import FeaturedProducts from "./FeaturedProducts";
+import { Header } from "./Header";
+import RunningShoes from "./RunningShoes";
+import SeasonsBanner from "./SeasonsBanner";
 
-const Home = () => {
+export const Home = () => {
   return (
-    <div className="main">
-      <h1>Home section</h1>
-    </div>
+    <>
+      <Header />
+      <Brands />
+      <FeaturedProducts />
+      <SeasonsBanner />
+      <BestWatches />
+      <RunningShoes />
+    </>
   );
 };
-
-export default Home
