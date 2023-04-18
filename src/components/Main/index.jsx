@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container, Text, Title, Button, Box, Img, Boxes, Price, Ellipse } from './MainStyle';
-import img1 from '../components/assets/images/chair1.png'
-import img2 from '../components/assets/images/chair2.png'
-import img3 from '../components/assets/images/chair3.png'
+import { Container, Text, Title, Button, Box, Img, Boxes, Price, Ellipse } from './style';
+import img1 from '../../assets/images/chair1.png'
+import img2 from '../../assets/images/chair2.png'
+import img3 from '../../assets/images/chair3.png'
 class Main extends React.Component {
     constructor(props) {
         super(props);

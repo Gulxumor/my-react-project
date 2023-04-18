@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container, Title, Wrapper, Link, Div, Image, Text, Sarlavha } from './BlogStyle';
-import TwoChair from "../components/assets/images/two-chairs.png"
-import Book from "../components/assets/images/book.png"
-import Shapes from "../components/assets/images/shapes.png"
+import { Container, Title, Wrapper, Link, Div, Image, Text, Sarlavha } from './style';
+import TwoChair from "../../assets/images/two-chairs.png"
+import Book from "../../assets/images/book.png"
+import Shapes from "../../assets/images/shapes.png"
 
 class Blog extends React.Component {
     constructor(props) {

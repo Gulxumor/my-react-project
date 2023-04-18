@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as Doiracha} from '../components/assets/icons/doira.svg';
+import { ReactComponent as Doiracha } from '../../assets/icons/doira.svg';
 
 export const Right = styled.div``
 
@@ -28,7 +28,7 @@ display: flex;
 align-items: center;
 justify-content: start;
 `;
- 
+
 
 
 export const Img = styled.img`

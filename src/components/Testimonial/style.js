@@ -1,25 +1,20 @@
 import styled from 'styled-components';
-import { ReactComponent as girl } from '../components/assets/icons/girl.svg';
+import { ReactComponent as girl } from '../../assets/icons/girl.svg';
 
 export const Container = styled.div`
 max-width: 1550px;
 width: 100%;
 margin: 0 auto;
 
-.slick-next, .slick-prev{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: var(--green);
-}
-
-.slick-next{
-    margin-right: -100px;
-}
-
-.slick-prev{
-    margin-left: -100px;
-}
+  .slick-arrow{
+    z-index: 999;
+    cursor: pointer;
+    margin: 0 150px;
+  }
+  .slick-next:before, .slick-prev:before {
+    color: var(--green) !important;
+    font-size: 35px !important;
+  }
 `
 
 export const Wrapper = styled.div`

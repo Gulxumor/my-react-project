@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { ReactComponent as icon } from '../components/assets/icons/envelope.svg';
-import { ReactComponent as telegram } from '../components/assets/icons/telegram.svg';
+import { ReactComponent as icon } from '../../assets/icons/envelope.svg';
+import { ReactComponent as telegram } from '../../assets/icons/telegram.svg';
 
 const Icon = styled(icon)``
 

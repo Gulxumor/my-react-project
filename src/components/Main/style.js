@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {ReactComponent as ellipse} from "../components/assets/icons/ellipse.svg"
+import { ReactComponent as ellipse } from "../../assets/icons/ellipse.svg"
 
 const Container = styled.div`
   max-width:1500px;

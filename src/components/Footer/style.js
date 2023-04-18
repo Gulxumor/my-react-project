@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { ReactComponent as facebook } from '../components/assets/icons/facebook.svg';
-import { ReactComponent as instagram } from '../components/assets/icons/instagram.svg';
-import { ReactComponent as twitter } from '../components/assets/icons/twitter.svg';
-import { ReactComponent as linkedn } from '../components/assets/icons/linkedin.svg';
+import { ReactComponent as facebook } from '../../assets/icons/facebook.svg';
+import { ReactComponent as instagram } from '../../assets/icons/instagram.svg';
+import { ReactComponent as twitter } from '../../assets/icons/twitter.svg';
+import { ReactComponent as linkedn } from '../../assets/icons/linkedin.svg';
 
 const Facebook = styled(facebook)``
 const Instagram = styled(instagram)``

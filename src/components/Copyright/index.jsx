@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Link, Wrapper } from './CopyrightStyle';
+import { Container, Link, Wrapper } from './style';
 
 class Copyright extends React.Component {
     constructor(props) {

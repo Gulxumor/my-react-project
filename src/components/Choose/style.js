@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { ReactComponent as truck } from '../components/assets/icons/truck.svg';
-import { ReactComponent as returnImg } from '../components/assets/icons/return.svg';
-import { ReactComponent as shopBag } from '../components/assets/icons/shop-bag.svg';
-import { ReactComponent as support } from '../components/assets/icons/support.svg';
+import { ReactComponent as truck } from '../../assets/icons/truck.svg';
+import { ReactComponent as returnImg } from '../../assets/icons/return.svg';
+import { ReactComponent as shopBag } from '../../assets/icons/shop-bag.svg';
+import { ReactComponent as support } from '../../assets/icons/support.svg';
 
 const Truck = styled(truck)``
 const Return = styled(returnImg)``

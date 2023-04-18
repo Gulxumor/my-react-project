@@ -1,6 +1,6 @@
 import React from 'react';
-import { Section,Button, Bottom, Icon, Image, Input, Telegram, Text, Top, Wrapper } from './NewsletterStyle';
-import Sofa from "../components/assets/images/sofa.png"
+import { Section,Button, Bottom, Icon, Image, Input, Telegram, Text, Top, Wrapper } from './style';
+import Sofa from "../../assets/images/sofa.png";
 
 class Newsletter extends React.Component {
     constructor(props) {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { ReactComponent as logo } from "../components/assets/icons/furni.svg"
-import { ReactComponent as user } from "../components/assets/icons/user.svg"
-import { ReactComponent as cart } from "../components/assets/icons/cart.svg"
+import { ReactComponent as logo } from "../../assets/icons/furni.svg"
+import { ReactComponent as user } from "../../assets/icons/user.svg"
+import { ReactComponent as cart } from "../../assets/icons/cart.svg"
 
 const Furni = styled(logo)``
 const User = styled(user)``
@@ -16,8 +16,8 @@ display:flex;
 const Wrapper = styled.div`
 max-width: 1500px;
 width:100%;
-padding:40px 178px;
-margin: auto;
+padding:20px 178px;
+margin: 0 auto;
 display:flex;
 align-items:flex-end;
 justify-content:space-between;
