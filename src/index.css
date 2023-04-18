@@ -1,146 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--font-family);
-    }
-    
-    :root {
-        --green: #3B5D50;
-        --yellow: #F9BF29;
-        --white: #fff;
-        --black: #2f2f2f;
-        --gray: #6A6A6A;
-        --lime: #35736E1A;
-        --color: #35736E4D;
-        --font-family: 'Inter', sans-serif;
-    
-    }
-    
-    h1 {
-        font-style: normal;
-        font-weight: 600;
-        font-size: 50px;
-        color: var(--white);
-    }
-    
-    h2 {
-        max-width: 205px;
-        max-height: 123px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 34px;
-        color: var(--black);
-    }
-    
-    p {
-        width: 228px;
-        max-height: 108px;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        color: var(--gray);
-    }
-
-/* <style>.center {
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,600;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+/* slider */
+ /* .slick-arrow:active {
+  transform: scale(1) !important;
 }
 
-.pagination {
-    display: inline-block;
+.slick-next:before,
+.slick-prev:before { 
+  opacity: 100 !important;
+  color: red !important;
+  font-size: 50px !important;
 }
 
-.pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #ddd;
-    margin: 0 4px;
+.slick-prev:before{
+  margin-left: -30px!important;
+}
+*/
+
+/*  Media
+@media(max-width:1300px) {}
+@media(max-width:1200px) {}
+@media(max-width:1050px) {}
+@media(max-width:767px) {}
+@media(max-width:428px) {}
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
 }
 
-.pagination a.active {
-    background-color: #4CAF50;
-    color: white;
-    border: 1px solid #4CAF50;
+.main {
+  margin-top: 100px;
+  text-align: center;
 }
-
-.pagination a:hover:not(.active) {
-    background-color: #ddd;
+:root {
+  --white: #fff;
+  --orange: rgb(251, 119, 75);
+  --black: rgb(51, 51, 51);
+  --gray: rgb(97, 99, 101);
+  --font-family: "Poppins", sans-serif;
 }
-
-</style></head><body><h2>Centered Pagination</h2><div class="center"><div class="pagination"><a href="#">&laquo;
-</a><a href="#">1</a><a href="#" class="active">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">&raquo;
-</a></div></div> */
-
-
-/* import React from 'react';
-import './Countries.css';
-
-import {
-    countries
-}
-
-from './Countries-data'
-
-
-class States extends React.Component {
-    constructor(props) {
-        super(props) this.state= {
-            arr: [],
-                inp: null,
-                countries: false
-        }
-    }
-
-    render() {
-        let inputChange=(e)=> {
-            this.setState({
-                inp: e.target.value
-            })
-    }
-
-    let inc=()=> {
-        let res=countries.filter(v=> v.name.common.toLowerCase()===this.state.inp.toLowerCase()) this.setState({
-            ...this.state, arr: res,
-        })
-}
-
-return (<div className="nav" > <div className="inp" > <input onChange= {
-        inputChange
-    }
-
-    placeholder="Enter any country name" ></input> <button onClick= {
-        inc
-    }
-
-    >Search</button> </div> {
-        this.state.arr.map(v=> (<div className="main" > <div className="img" > <img src= {
-                    v.flags.png
-                }
-
-                alt="flag" ></img> <h4>State: {
-                    v.name.common
-                }
-
-                </h4> </div> <h4>Population: {
-                    v.population
-                }
-
-                </h4> <h4>Continents: {
-                    v.continents[0]
-                }
-
-                </h4> <h4>Capital: {
-                    v.capital[0]
-                }
-
-                </h4> </div>))
-    }
-
-    </div>)
-}
-}
-export default States */
