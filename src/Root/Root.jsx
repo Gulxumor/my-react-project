@@ -1,14 +1,9 @@
-import React from "react";
-import Navbar from "../components/Navbar";
-import Products from "../components/Products";
+import React from 'react'
 
 const Root = () => {
   return (
-    <div>
-      <Navbar />
-      <Products />
-    </div>
-  );
-};
+    <div>Root</div>
+  )
+}
 
-export default Root;
+export default Root
