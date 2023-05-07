@@ -23,9 +23,14 @@
   ? const posts = useQuery("getAllPosts",   //! 1=> parametr
   ? () => fetch("https://jsonplaceholder.typicode.com/users").then(res => res.json()),
   ? { keepPreviousData: true, refetchOnWindowFocus: false, })  //! 3=> parametr
-  shu orqali endi malumotlarni map qilib ekranga chiqarish mumkin bo'ladi 
+  bu yerdan biz posts so'zi o'rniga datani destructure qilib olamiz 
+  ? const {data} = useQuery(....parametres...)
+  endi shu data orqali endi malumotlarni map qilib ekranga chiqarish mumkin bo'ladi 
+ 
   ==================================================
+
   ! BOSHQA COMPONENTDA ISHLATISH
+
   1. ishlatilinishi kk bo'lgan componentda useQueryClient degan hook import qilinadi.
   2. o'zgaruvchi ochilib useQueryClient() ga tenglanadi
   ? const queryClient = useQueryClient()
@@ -35,4 +40,11 @@
   Va endi anashu ma'lumotni istagan joyimizda ishlatib ketsak bo'laveradi.
 
   ! THE END
+*/
+
+
+/* // TODO  ============= useMutation
+ useMutation => ma'lumotlarni update va post qilish uchun ishlatiladi
+
+
 */
