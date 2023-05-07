@@ -1,70 +1,38 @@
-/* // TODO  ============= Redux toolkit
-    1. redux va redux-toolkit o'rnatib olinadi
-    ?  npm install @reduxjs/toolkit react-redux
-    2. Store ochib olamiz va uni configure qilib ketamiz. : configureCtore()
-    ?  import { configureStore } from "@reduxjs/toolkit"; 
-    3. Istalgan (store) nomda ozgaruvchi ochib uni export qilamiz va configureStore() ga tenglaymiz.
-    4. Qavs ichiga obj ochilib reducer deb yoziladi va unga value qilib obj tenglanadi.
-    5. Keyinchalik qandaydur slice create qiladigan bolsak, hammasi shu obj scope ichiga  yozib ketiladi
-    6. Eng 1-orab turuvchiga yani index.js ga o'tilib, provider react-redux dan import qilinadi va root orab qoyiladi
-    7. providerning store atribut ichiga create qilgan store imizni yozib qoyamiz lik this => 
-    ?  <Provider store={store}></Root></Provider>
-    8. Yangi 1 folder/fayl ochib ichiga slice yozamiz. 1-navbatda createSlice ni import qilamiz.
-    ?  import { createSlice } from "@reduxjs/toolkit";
-    9. createSlice ozgaruvchiga tenglanadi va qavs ichiga obj ochiladi. u oziga 3 ta qiymat oladi.  
-      M: ^^^^^^^^^^^^^^^^^^^^
-      const counterSlice = createSlice({
-          name: "counterSlice",         // ! 1 => slice nomi. 
-          initialState: { counter: 0 }, // ! 2=> initialState.
-          reducers: {                   // ! 3=> reducers:{}  => bu oz ichiga barcha action (formula) larni oladi.
-              increment: (state, action) => {
-                  state.counter += 1
-              },
-              incrementByAmount: (state, action) => {
-                  state.counter += action.payload
-              }
-          }
-      });
-      export const {increment,incrementByAmount} = counterSlice.actions
-      export default counterSlice.reducer   // ! reducers emas
-      M: ^^^^^^^^^^^^^^^^^^^^
-    10. store.js ga otib  yozilgan slice ni import qilamiz va reducer ichidagi obj ga yozib qoyiladi
-    ?  export const store = configureStore({reducer: {counterReducer,}})
-    11. Component ochib root ga ulandi va counter qiladigan kod yozildi
-       
-        import { useDispatch, useSelector } from "react-redux"; // ! useDispatch, useSelector import qilindi 
-        import {decrement, decrementByAmount,increment,incrementByAmount} from "../../store/CounterSlice";
-        ! button onClick bolgandagi bajariladigan actionlar import qilindi
-        const Navbar = () => {
-          const { counter } = useSelector((state) => state.counterReducer);   
-        ! useSelector orqali ishlatiladigan narsamiz destructatsiya qilib olinyabdi
-          const dispatch = useDispatch();  // ! useDispatch dan dispatch import qilinyabdi
-          return (
-            <div>
-              <h2>Navbar, {counter}</h2>   // ! counter ekranga chiqarilyabdi
-              <button onClick={() => dispatch(increment())}>+</button>   
-        ! onclick bolgandagi xolati => dispatch chaqirilyabdi va qavs ichiga bajariladigan action yozilyabdi
-              <button onClick={() => dispatch(decrement())}>-</button>
-              <button onClick={() => dispatch(incrementByAmount(5))}>+5</button>
-              <button onClick={() => dispatch(decrementByAmount({ minus: 2 }))}>-2</button>
-        ! dispatch chaqirilyabdi va qavs ichiga bajariladigan action yozilyabdi.
-        ! 2 ga kamaytirib ketishi uchun obj ochilib uni ichiga { minus: 2 } deb payload berib ketilyabdi. 
-        ! Funksiyasi bajarilayotganda anashu payloadga qarab kamaytirib ketadi           
-            </div>
-          );
-        };
-        export default Navbar;
+/* // TODO  ============= useQuery 
+    React-query=> bu huddi useEffectga o'xshaydi. 
+    Backenddan ma'lumot olib kelish uchun ishlatiladi. 
+    UseEffectdan ustun joyi shundaki, useQuery malumotlarni o'z xotirasiga keshlab oladi.
+    Keyin bu ma'lumotni biz boshqa 1 componentda ishlatishimzga access beradi.
+    useEffectda esa boshqatdan fetch/axios orqali olib kelish kerak bo'ladi.
 
-    
-        
-    
+  ? 1. npm i react-query o'rnatib olinadi
+    2. index.js ga o'tiladi so'ng quyidagi amallar bajariladi
+  ? 3. import {QueryClient, QueryClientProvider} from "react-query"
+    4. Yangi o'zgaruvchi ochilib new QueryClient ga tenglanadi
+  ?  const queryClient = new QueryClient()  
+    5. QueryClientProvider orqali root o'rab qo'yiladi
+  ? <QueryClientProvider><Root /></QueryClientProvider>
+    6. QueryClientProvider ning client degan atributiga yangi ochgan variableni beramiz
+  ? <QueryClientProvider client={queryClient} ><Root/></QueryClientProvider> 
+    7.Biror 1 componentga o'tiladi va useQuery import qilinib 1 o'zgaruvchiga tenglanadi
+  ? const posts = useQuery()  
+    useQuery o'ziga 3 ta parametr oladi. 
+    1 => nomi.(nima malumot olib kelayotganga qarab descriptive nom qo'yib ketgan yaxshi) 
+    2 => callback function bo'ladi. Shu joyda biz so'rov yuborishimiz mumkin
+    3 => o'zining methodlari bo'ladi object ichida.
+  ? const posts = useQuery("getAllPosts",   //! 1=> parametr
+  ? () => fetch("https://jsonplaceholder.typicode.com/users").then(res => res.json()),
+  ? { keepPreviousData: true, refetchOnWindowFocus: false, })  //! 3=> parametr
+  shu orqali endi malumotlarni map qilib ekranga chiqarish mumkin bo'ladi 
+  ==================================================
+  ! BOSHQA COMPONENTDA ISHLATISH
+  1. ishlatilinishi kk bo'lgan componentda useQueryClient degan hook import qilinadi.
+  2. o'zgaruvchi ochilib useQueryClient() ga tenglanadi
+  ? const queryClient = useQueryClient()
+  3. So'ng yana 1 yangi variable ochiladi.
+    So'ng unga queryClient.getQueryData("getAllPosts") deb yoziladi.
+  4. Shu xolatda console qilib qaralsa, malumot kelgan bo'ladi. 
+  Va endi anashu ma'lumotni istagan joyimizda ishlatib ketsak bo'laveradi.
 
-
-
-
- */
-
-/* // TODO  ============= Something 
-
+  ! THE END
 */
-
