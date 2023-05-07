@@ -1,14 +1,13 @@
-import React from 'react'
-import Posts from "../components/Posts";
-import Products from "../components/Products";
+import AddNewUser from "../components/AddNewUser";
+import Products from "../components/Users";
 
 const Root = () => {
   return (
     <div>
+      {/* <AddNewUser /> */}
       <Products />
-      <Posts />
     </div>
   );
 };
 
-export default Root
+export default Root;
